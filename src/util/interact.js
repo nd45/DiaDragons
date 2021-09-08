@@ -1,7 +1,7 @@
 import { pinJSONToIPFS } from "./pinata.js";
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
-const contractABI = require("../artifacts/contracts/SpacePoggers.sol/SpacePoggers.json");
+const contractABI = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
 const contractAddress = "0x49c49FcaeAC75300A78f0Ae5E6ADf7711a433F82";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
@@ -112,7 +112,7 @@ export const mintNFT = async (url, name, description) => {
     from: window.ethereum.selectedAddress, // must match user's active address.
     value: '100000000000000',
     data: window.contract.methods
-      .mintPoggerTier1()
+      .mintDiaDragonTier1()
       .encodeABI(),
   };
 

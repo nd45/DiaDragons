@@ -6,10 +6,10 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(REACT_APP_ALCHEMY_KEY);
 
-// const contract = require("./build/contracts/SpacePoggers.json"); // for Truffle 
-const contract = require("../artifacts/contracts/SpacePoggers.sol/SpacePoggers.json");
+// const contract = require("./build/contracts/DiaDragons.json"); // for Truffle 
+const contract = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
 const contractAddress = "0x49c49FcaeAC75300A78f0Ae5E6ADf7711a433F82";
-const SpacePoggersContract = new web3.eth.Contract(contract.abi, contractAddress);
+const DiaDragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function main() {
     const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, 'latest'); // get latest nonce
@@ -22,7 +22,7 @@ async function main() {
       'nonce': nonce,
       'gas': 5000000, 
       'maxFeePerGas': 1000000108,
-      'data': SpacePoggersContract.methods.startSale().encodeABI()
+      'data': DiaDragonsContract.methods.startSale().encodeABI()
     };
 
     // Sign the transaction
