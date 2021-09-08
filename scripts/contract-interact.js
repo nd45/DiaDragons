@@ -6,14 +6,14 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(REACT_APP_ALCHEMY_KEY);
 
-// const contract = require("./build/contracts/SpacePoggers.json"); // for Truffle 
-const contract = require("../artifacts/contracts/SpacePoggers.sol/SpacePoggers.json"); // for Hardhat
+// const contract = require("./build/contracts/DiaDragons.json"); // for Truffle 
+const contract = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json"); // for Hardhat
 const contractAddress = process.env.CONTRACT_ADDRESS;
-const SpacePoggersContract = new web3.eth.Contract(contract.abi, contractAddress);
+const DiaDragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function updateMessage(newMessage) {
     const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, 'latest'); // get latest nonce
-    const gasEstimate = await SpacePoggersContract.methods.update(newMessage).estimateGas(); // estimate gas
+    const gasEstimate = await DiaDragonsContract.methods.update(newMessage).estimateGas(); // estimate gas
 
     // Create the transaction
     const tx = {
@@ -22,7 +22,7 @@ async function updateMessage(newMessage) {
       'nonce': nonce,
       'gas': gasEstimate, 
       'maxFeePerGas': 1000000108,
-      'data': SpacePoggersContract.methods.update(newMessage).encodeABI()
+      'data': DiaDragonsContract.methods.update(newMessage).encodeABI()
     };
 
     // Sign the transaction
@@ -41,7 +41,7 @@ async function updateMessage(newMessage) {
 }
 
 async function main() {
-    const message = await SpacePoggersContract.methods.message().call();
+    const message = await DiaDragonsContract.methods.message().call();
     console.log("The message is: " + message);
     await updateMessage("Hello Drupe!");
 }

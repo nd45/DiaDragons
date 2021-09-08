@@ -6,20 +6,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import "hardhat/console.sol";
 
-//     _____ ____  ___   ____________
-//    / ___// __ \/   | / ____/ ____/
-//    \__ \/ /_/ / /| |/ /   / __/
-//   ___/ / ____/ ___ / /___/ /___
-//  /____/_/  _/_/  |_\____/_____/________  _____
-//     / __ \/ __ \/ ____/ ____/ ____/ __ \/ ___/
-//    / /_/ / / / / / __/ / __/ __/ / /_/ /\__ \
-//   / ____/ /_/ / /_/ / /_/ / /___/ _, _/___/ /
-//  /_/    \____/\____/\____/_____/_/ |_|/____/
-//
-
-contract SpacePoggers is ERC721, ERC721Enumerable, Ownable {
+contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Strings for uint256;
 
@@ -41,7 +29,7 @@ contract SpacePoggers is ERC721, ERC721Enumerable, Ownable {
     event SaleStopped();
     event TokenMinted(uint256 supply);
 
-    constructor(string memory _initBaseURI) ERC721("Space Poggers", "SP") {
+    constructor(string memory _initBaseURI) ERC721("DiaDragons", "SP") {
         setBaseURI(_initBaseURI);
     }
 
@@ -68,7 +56,7 @@ contract SpacePoggers is ERC721, ERC721Enumerable, Ownable {
         return totalSupply();
     }
 
-    function getPoggersByOwner(address _owner)
+    function getDiaDragonsByOwner(address _owner)
         public
         view
         returns (uint256[] memory)
@@ -82,39 +70,38 @@ contract SpacePoggers is ERC721, ERC721Enumerable, Ownable {
         return tokenIds;
     }
 
-    function mintPoggerTier1() public payable {
-        require(_isSaleActive, "Sale must be active to mint Poggers");
+    function mintDiaDragonTier1() public payable {
+        require(_isSaleActive, "Sale must be active to mint DiaDragons");
         require(
             totalSupply().add(TIER1_NUM_TOKENS) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
         require(TIER1_PRICE <= msg.value, "Not enough ether sent (<0.07 ETH)");
-        console.log(msg.sender);
-        _mintPoggers(TIER1_NUM_TOKENS, msg.sender);
+        _mintDiaDragons(TIER1_NUM_TOKENS, msg.sender);
         emit TokenMinted(totalSupply());
     }
 
-    function reservePoggers(uint256 numPoggers) public onlyOwner {
+    function reserveDiaDragons(uint256 numDiaDragons) public onlyOwner {
         require(
-            totalSupply().add(numPoggers) <= MAX_SUPPLY,
+            totalSupply().add(numDiaDragons) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        _mintPoggers(numPoggers, msg.sender);
+        _mintDiaDragons(numDiaDragons, msg.sender);
     }
 
-    function airdropPogger(uint256 numPoggers, address recipient)
+    function airdropDiaDragon(uint256 numDiaDragons, address recipient)
         public
         onlyOwner
     {
         require(
-            totalSupply().add(numPoggers) <= MAX_SUPPLY,
+            totalSupply().add(numDiaDragons) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        _mintPoggers(numPoggers, recipient);
+        _mintDiaDragons(numDiaDragons, recipient);
         emit TokenMinted(totalSupply());
     }
 
-    function airdropPoggerToMany(address[] memory recipients)
+    function airdropDiaDragonToMany(address[] memory recipients)
         external
         onlyOwner
     {
@@ -123,11 +110,11 @@ contract SpacePoggers is ERC721, ERC721Enumerable, Ownable {
             "Sale would exceed max supply"
         );
         for (uint256 i = 0; i < recipients.length; i++) {
-            airdropPogger(1, recipients[i]);
+            airdropDiaDragon(1, recipients[i]);
         }
     }
 
-    function airdropThirteenthPogger(address recipient) external onlyOwner {
+    function airdropThirteenthDiaDragon(address recipient) external onlyOwner {
         require(
             !_isSaleActive &&
                 (totalSupply() >= MAX_SUPPLY ||
@@ -138,10 +125,11 @@ contract SpacePoggers is ERC721, ERC721Enumerable, Ownable {
         _safeMint(recipient, tokenId);
     }
 
-    function _mintPoggers(uint256 numPoggers, address recipient) internal {
+    function _mintDiaDragons(uint256 numDiaDragons, address recipient)
+        internal
+    {
         uint256 supply = totalSupply();
-        for (uint256 i = 0; i < numPoggers; i++) {
-            console.log(supply);
+        for (uint256 i = 0; i < numDiaDragons; i++) {
             _safeMint(recipient, supply + i);
         }
 

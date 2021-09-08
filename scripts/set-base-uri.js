@@ -6,14 +6,14 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(REACT_APP_ALCHEMY_KEY);
 
-// const contract = require("./build/contracts/SpacePoggers.json"); // for Truffle 
-const contract = require("../artifacts/contracts/SpacePoggers.sol/SpacePoggers.json");
+// const contract = require("./build/contracts/DiaDragons.json"); // for Truffle 
+const contract = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
 const contractAddress = "0xda9b9d82e5ae061F8952e174b76Ddeb02049f7f4";
-const SpacePoggersContract = new web3.eth.Contract(contract.abi, contractAddress);
+const DiaDragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function main() {
     const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, 'latest'); // get latest nonce
-    const gasEstimate = await SpacePoggersContract.methods.setBaseURI("https://gateway.pinata.cloud/ipfs/QmSsj9CZBAZRSvZkdRPer7SfxFfr3qvs3xmLjMiTg1TKag/").gasEstimate; // estimate gas
+    const gasEstimate = await DiaDragonsContract.methods.setBaseURI("https://gateway.pinata.cloud/ipfs/QmSsj9CZBAZRSvZkdRPer7SfxFfr3qvs3xmLjMiTg1TKag/").gasEstimate; // estimate gas
 
     // Create the transaction
     const tx = {
@@ -22,7 +22,7 @@ async function main() {
       'nonce': nonce,
       'gas': 8000000, 
       'maxFeePerGas': 7100000108,
-      'data': SpacePoggersContract.methods.setBaseURI("https://gateway.pinata.cloud/ipfs/QmSsj9CZBAZRSvZkdRPer7SfxFfr3qvs3xmLjMiTg1TKag/").encodeABI()
+      'data': DiaDragonsContract.methods.setBaseURI("https://gateway.pinata.cloud/ipfs/QmSsj9CZBAZRSvZkdRPer7SfxFfr3qvs3xmLjMiTg1TKag/").encodeABI()
     };
 
     // Sign the transaction

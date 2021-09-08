@@ -1,8 +1,8 @@
 async function main() {
-    const SpacePoggers = await ethers.getContractFactory("SpacePoggers");
+    const DiaDragons = await ethers.getContractFactory("DiaDragons");
     
     // Start deployment, returning a promise that resolves to a contract object
-    const test_poggers = await SpacePoggers.deploy("https://gateway.pinata.cloud/ipfs/QmSsj9CZBAZRSvZkdRPer7SfxFfr3qvs3xmLjMiTg1TKag/");   
+    const test_poggers = await DiaDragons.deploy("https://gateway.pinata.cloud/ipfs/QmSsj9CZBAZRSvZkdRPer7SfxFfr3qvs3xmLjMiTg1TKag/");   
     console.log("Contract deployed to address:", test_poggers.address);
  }
  
