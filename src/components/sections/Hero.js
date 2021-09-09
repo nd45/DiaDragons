@@ -8,6 +8,8 @@ import Modal from "../elements/Modal";
 import placeholder from "./../../assets/images/video-placeholder.jpg";
 import Header from "../layout/Header";
 import { mintNFT } from "../../util/interact.js";
+import Countdown from "react-countdown";
+import { zeroPad } from "react-countdown";
 
 const propTypes = {
 	...SectionProps.types,
@@ -64,6 +66,39 @@ const Hero = ({
 		bottomDivider && "has-bottom-divider"
 	);
 
+	const Completionist = () => {
+		return (
+			<ButtonGroup>
+				<Button
+					tag='a'
+					color='primary'
+					wideMobile
+					id='mintButton'
+					onClick={onMintPressed}>
+					Mint NFT
+				</Button>
+				<p id='status' style={{ color: "red" }}>
+					{status}
+				</p>
+			</ButtonGroup>
+		);
+	};
+
+	// Renderer callback with condition
+	const renderer = ({ days, hours, minutes, seconds, completed }) => {
+		if (completed) {
+			// Render a completed state
+			return <Completionist />;
+		} else {
+			// Render a countdown
+			return (
+				<span>
+					{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+				</span>
+			);
+		}
+	};
+
 	return (
 		<section {...props} className={outerClasses}>
 			<div className='container-sm'>
@@ -75,27 +110,14 @@ const Hero = ({
 							DiaDragons
 						</h1>
 						<div className='container-xs'>
-							<p
-								className='m-0 mb-32 reveal-from-bottom'
-								data-reveal-delay='400'>
-								Our landing page template works on all devices, so you only have
-								to set it up once, and get beautiful results forever.
-							</p>
-							<div className='reveal-from-bottom' data-reveal-delay='600'>
-								<ButtonGroup>
-									<Button
-										tag='a'
-										color='dark'
-										wideMobile
-										id='mintButton'
-										onClick={onMintPressed}>
-										Mint NFT
-									</Button>
-									<p id='status' style={{ color: "red" }}>
-										{status}
-									</p>
-								</ButtonGroup>
-							</div>
+							<Countdown
+								date={
+									Date.now() +
+									(Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now())
+								}
+								renderer={renderer}
+							/>
+							<div className='reveal-from-bottom' data-reveal-delay='600'></div>
 						</div>
 					</div>
 					<div

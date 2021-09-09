@@ -4,7 +4,10 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Logo from "./partials/Logo";
 import FooterSocial from "../layout/partials/FooterSocial";
-import { connectWallet } from "../../util/interact.js";
+import {
+	connectWallet,
+	getCurrentWalletConnected,
+} from "../../util/interact.js";
 
 const propTypes = {
 	navPosition: PropTypes.string,
@@ -37,10 +40,42 @@ const Header = ({
 	const nav = useRef(null);
 	const hamburger = useRef(null);
 
-	useEffect(() => {
+	function addWalletListener() {
+		if (window.ethereum) {
+			window.ethereum.on("accountsChanged", (accounts) => {
+				if (accounts.length > 0) {
+					setWallet(accounts[0]);
+					setStatus("👆🏽 Write a message in the text-field above.");
+				} else {
+					setWallet("");
+					setStatus("🦊 Connect to Metamask using the top right button.");
+				}
+			});
+		} else {
+			setStatus(
+				<p>
+					{" "}
+					🦊{" "}
+					<a target='_blank' href={`https://metamask.io/download.html`}>
+						You must install Metamask, a virtual Ethereum wallet, in your
+						browser.
+					</a>
+				</p>
+			);
+		}
+	}
+
+	useEffect(async () => {
 		isActive && openMenu();
 		document.addEventListener("keydown", keyPress);
 		document.addEventListener("click", clickOutside);
+		const { address, status } = await getCurrentWalletConnected();
+
+		setWallet(address);
+		setStatus(status);
+
+		addWalletListener();
+
 		return () => {
 			document.removeEventListener("keydown", keyPress);
 			document.removeEventListener("click", clickOutside);
