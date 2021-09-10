@@ -78,7 +78,6 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
             "Sale would exceed max supply"
         );
         require(TIER1_PRICE <= msg.value, "Not enough ether sent (<0.07 ETH)");
-        console.log(msg.sender);
         _mintDiaDragons(TIER1_NUM_TOKENS, msg.sender);
         emit TokenMinted(totalSupply());
     }
@@ -132,7 +131,6 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     {
         uint256 supply = totalSupply();
         for (uint256 i = 0; i < numDiaDragons; i++) {
-            console.log(supply);
             _safeMint(recipient, supply + i);
         }
 

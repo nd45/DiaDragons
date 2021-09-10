@@ -499,8 +499,8 @@
       ]
     },
     "/Users/nickdellorco/Desktop/DiaDagons/contracts/DiaDragons.sol": {
-      "lastModificationDate": 1631083772217,
-      "contentHash": "16c278f944900708d58e32256e319730",
+      "lastModificationDate": 1631220921776,
+      "contentHash": "5484bb12ecd67e38e4ff0a5222410d9c",
       "sourceName": "contracts/DiaDragons.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -688,7 +688,7 @@
       ]
     },
     "/Users/nickdellorco/Desktop/DiaDagons/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1631079279936,
+      "lastModificationDate": 1631084636871,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {

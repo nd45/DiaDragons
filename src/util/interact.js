@@ -2,7 +2,7 @@ import { pinJSONToIPFS } from "./pinata.js";
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
-const contractAddress = "0x49c49FcaeAC75300A78f0Ae5E6ADf7711a433F82";
+const contractAddress = "0xd832B8eED0E5B8f124eCa1Cc2dFe2e5dCf60746d";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
@@ -124,7 +124,7 @@ export const mintNFT = async () => {
 		return {
 			success: true,
 			status:
-				"✅ Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx/" +
+				"✅ Check out your transaction on Etherscan: https://rinkeby.etherscan.io/tx/" +
 				txHash,
 		};
 	} catch (error) {

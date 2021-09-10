@@ -112,8 +112,8 @@ const Hero = ({
 						<div className='container-xs'>
 							<Countdown
 								date={
-									Date.now() +
-									(Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now())
+									//Date.now() +
+									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now()
 								}
 								renderer={renderer}
 							/>
