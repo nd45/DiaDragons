@@ -6,6 +6,8 @@ import Button from "../elements/Button";
 import Image from "../elements/Image";
 import Modal from "../elements/Modal";
 import placeholder from "./../../assets/images/video-placeholder.jpg";
+import { mintNFT } from "../../util/interact.js";
+import Countdown, { zeroPad } from "react-countdown";
 
 const propTypes = {
 	...SectionProps.types,
@@ -26,6 +28,12 @@ const Hero = ({
 	...props
 }) => {
 	const [videoModalActive, setVideomodalactive] = useState(false);
+	const [status, setStatus] = useState("");
+
+	const onMintPressed = async () => {
+		const { success, status } = await mintNFT();
+		setStatus(status);
+	};
 
 	const openModal = (e) => {
 		e.preventDefault();
@@ -35,6 +43,39 @@ const Hero = ({
 	const closeModal = (e) => {
 		e.preventDefault();
 		setVideomodalactive(false);
+	};
+
+	const Completionist = () => {
+		return (
+			<ButtonGroup>
+				<Button
+					tag='a'
+					color='primary'
+					wideMobile
+					id='mintButton'
+					onClick={onMintPressed}>
+					Mint NFT
+				</Button>
+				<p id='status' style={{ color: "red" }}>
+					{status}
+				</p>
+			</ButtonGroup>
+		);
+	};
+
+	// Renderer callback with condition
+	const renderer = ({ days, hours, minutes, seconds, completed }) => {
+		if (completed) {
+			// Render a completed state
+			return <Completionist />;
+		} else {
+			// Render a countdown
+			return (
+				<span>
+					{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+				</span>
+			);
+		}
 	};
 
 	const outerClasses = classNames(
@@ -60,34 +101,16 @@ const Hero = ({
 						<h1
 							className='mt-0 mb-16 reveal-from-bottom'
 							data-reveal-delay='200'>
-							Landing template for{" "}
-							<span className='text-color-primary'>startups</span>
+							DiaDragons
 						</h1>
-						<div className='container-xs'>
-							<p
-								className='m-0 mb-32 reveal-from-bottom'
-								data-reveal-delay='400'>
-								Our landing page template works on all devices, so you only have
-								to set it up once, and get beautiful results forever.
-							</p>
-							<div className='reveal-from-bottom' data-reveal-delay='600'>
-								<ButtonGroup>
-									<Button
-										tag='a'
-										color='primary'
-										wideMobile
-										href='https://cruip.com/'>
-										Get started
-									</Button>
-									<Button
-										tag='a'
-										color='dark'
-										wideMobile
-										href='https://github.com/cruip/open-react-template/'>
-										View on Github
-									</Button>
-								</ButtonGroup>
-							</div>
+						<div className='reveal-from-bottom' data-reveal-delay='600'>
+							<Countdown
+								date={
+									//Date.now() +
+									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now()
+								}
+								renderer={renderer}
+							/>
 						</div>
 					</div>
 					<div
