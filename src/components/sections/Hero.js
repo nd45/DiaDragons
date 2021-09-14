@@ -54,7 +54,7 @@ const Hero = ({
 					wideMobile
 					id='mintButton'
 					onClick={onMintPressed}>
-					Mint NFT
+					Mint DiaDragon
 				</Button>
 				<p id='status' style={{ color: "red" }}>
 					{status}
@@ -106,8 +106,9 @@ const Hero = ({
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown
 								date={
-									//Date.now() +
-									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now()
+									Date.now() +
+									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() -
+									Date.now()
 								}
 								renderer={renderer}
 							/>
