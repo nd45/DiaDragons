@@ -9,7 +9,6 @@ import LayoutDefault from './layouts/LayoutDefault';
 
 // Views 
 import Home from './views/Home';
-import Minter from './Minter';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -37,8 +36,7 @@ const App = () => {
       ref={childRef}
       children={() => (
         <Switch>
-          <Minter></Minter>
-          {/* <AppRoute exact path="/" component={Home} layout={LayoutDefault} /> */}
+          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
         </Switch>
       )} />
   );

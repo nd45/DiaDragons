@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "hardhat/console.sol";
 
 contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     using SafeMath for uint256;
@@ -20,7 +21,7 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     uint256 public constant TIER1_PRICE = .070 ether;
     uint256 public constant TIER1_NUM_TOKENS = 1;
     uint256 public constant MAX_SUPPLY = 10000;
-    string public POGGERS_PROVENANCE = "";
+    string public DIADRAGONS_PROVENANCE = "";
 
     string public baseURI;
     string public _preRevealURI;
@@ -29,7 +30,7 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     event SaleStopped();
     event TokenMinted(uint256 supply);
 
-    constructor(string memory _initBaseURI) ERC721("DiaDragons", "SP") {
+    constructor(string memory _initBaseURI) ERC721("DiaDragons", "DD") {
         setBaseURI(_initBaseURI);
     }
 
@@ -119,9 +120,9 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
             !_isSaleActive &&
                 (totalSupply() >= MAX_SUPPLY ||
                     block.timestamp >= revealTimeStamp),
-            "The 13th pogger will only be airdropped once the sale has concluded"
+            "The 13th dragon will only be airdropped once the sale has concluded"
         );
-        uint256 tokenId = totalSupply() + MAX_SUPPLY; // Disallow 13th pogger ids from 0-12000 range
+        uint256 tokenId = totalSupply() + MAX_SUPPLY; // Disallow 13th dragon ids from 0-12000 range
         _safeMint(recipient, tokenId);
     }
 
@@ -165,7 +166,7 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
         external
         onlyOwner
     {
-        POGGERS_PROVENANCE = provenanceHash;
+        DIADRAGONS_PROVENANCE = provenanceHash;
     }
 
     function setRevealTimestamp(uint256 newRevealTimeStamp) external onlyOwner {
