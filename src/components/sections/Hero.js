@@ -6,7 +6,6 @@ import Button from "../elements/Button";
 import Image from "../elements/Image";
 import Modal from "../elements/Modal";
 import placeholder from "./../../assets/images/video-placeholder.jpg";
-import Header from "../layout/Header";
 import { mintNFT } from "../../util/interact.js";
 import Countdown from "react-countdown";
 import { zeroPad } from "react-countdown";
@@ -17,10 +16,6 @@ const propTypes = {
 
 const defaultProps = {
 	...SectionProps.defaults,
-};
-
-const walletAddress = {
-	...Header.walletAddress,
 };
 
 const Hero = ({
@@ -110,6 +105,7 @@ const Hero = ({
 							DiaDragons
 						</h1>
 						<div className='container-xs'>
+							<div className='reveal-from-bottom' data-reveal-delay='600'></div>
 							<Countdown
 								date={
 									//Date.now() +
@@ -117,7 +113,6 @@ const Hero = ({
 								}
 								renderer={renderer}
 							/>
-							<div className='reveal-from-bottom' data-reveal-delay='600'></div>
 						</div>
 					</div>
 					<div
