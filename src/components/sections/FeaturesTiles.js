@@ -8,7 +8,7 @@ import image2 from "./../../assets/images/feature-tile-icon-02.svg";
 import image3 from "./../../assets/images/feature-tile-icon-03.svg";
 import image4 from "./../../assets/images/feature-tile-icon-04.svg";
 import image5 from "./../../assets/images/feature-tile-icon-05.svg";
-import image6 from "./../../assets/images/feature-tile-icon-06.svg";
+import styles from "./../../App.css";
 
 const propTypes = {
 	...SectionTilesProps.types,
@@ -49,9 +49,9 @@ const FeaturesTiles = ({
 	);
 
 	const sectionHeader = {
-		title: "Build up the whole picture",
+		title: "Milestones",
 		paragraph:
-			"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.",
+			"As we meet the following milestones for our launch, we will release new updates on each of the corresponding goals! Each milestone refers to the percentage of total NFTs sold (out of 10,000).",
 	};
 
 	return (
@@ -64,7 +64,8 @@ const FeaturesTiles = ({
 							<div className='tiles-item-inner'>
 								<div className='features-tiles-item-header'>
 									<div className='features-tiles-item-image mb-16'>
-										<Image
+										<img
+											className={styles.testhover}
 											src={image1}
 											alt='Features tile icon 01'
 											width={64}
@@ -73,11 +74,11 @@ const FeaturesTiles = ({
 									</div>
 								</div>
 								<div className='features-tiles-item-content'>
-									<h4 className='mt-0 mb-8'>Robust Workflow</h4>
+									<h4 className='mt-0 mb-8'>10% sold</h4>
 									<p className='m-0 text-sm'>
-										Duis aute irure dolor in reprehenderit in voluptate velit
-										esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-										occaecat cupidatat.
+										1 lucky Diadragon owner will be the first ever person to use
+										or gift a Life Drop and receive an exclusive ultra rare
+										Diadragon!
 									</p>
 								</div>
 							</div>
@@ -98,11 +99,11 @@ const FeaturesTiles = ({
 									</div>
 								</div>
 								<div className='features-tiles-item-content'>
-									<h4 className='mt-0 mb-8'>Robust Workflow</h4>
+									<h4 className='mt-0 mb-8'>25% sold</h4>
 									<p className='m-0 text-sm'>
-										Duis aute irure dolor in reprehenderit in voluptate velit
-										esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-										occaecat cupidatat.
+										1 lucky Diadragon owner will be the first ever person to use
+										or gift a Life Drop and receive an exclusive ultra rare
+										Diadragon!
 									</p>
 								</div>
 							</div>
@@ -123,11 +124,11 @@ const FeaturesTiles = ({
 									</div>
 								</div>
 								<div className='features-tiles-item-content'>
-									<h4 className='mt-0 mb-8'>Robust Workflow</h4>
+									<h4 className='mt-0 mb-8'>50% sold</h4>
 									<p className='m-0 text-sm'>
-										Duis aute irure dolor in reprehenderit in voluptate velit
-										esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-										occaecat cupidatat.
+										1 lucky Diadragon owner will be the first ever person to use
+										or gift a Life Drop and receive an exclusive ultra rare
+										Diadragon!
 									</p>
 								</div>
 							</div>
@@ -146,11 +147,11 @@ const FeaturesTiles = ({
 									</div>
 								</div>
 								<div className='features-tiles-item-content'>
-									<h4 className='mt-0 mb-8'>Robust Workflow</h4>
+									<h4 className='mt-0 mb-8'>75% sold</h4>
 									<p className='m-0 text-sm'>
-										Duis aute irure dolor in reprehenderit in voluptate velit
-										esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-										occaecat cupidatat.
+										1 lucky Diadragon owner will be the first ever person to use
+										or gift a Life Drop and receive an exclusive ultra rare
+										Diadragon!
 									</p>
 								</div>
 							</div>
@@ -171,36 +172,11 @@ const FeaturesTiles = ({
 									</div>
 								</div>
 								<div className='features-tiles-item-content'>
-									<h4 className='mt-0 mb-8'>Robust Workflow</h4>
+									<h4 className='mt-0 mb-8'>100% sold</h4>
 									<p className='m-0 text-sm'>
-										Duis aute irure dolor in reprehenderit in voluptate velit
-										esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-										occaecat cupidatat.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div
-							className='tiles-item reveal-from-bottom'
-							data-reveal-delay='400'>
-							<div className='tiles-item-inner'>
-								<div className='features-tiles-item-header'>
-									<div className='features-tiles-item-image mb-16'>
-										<Image
-											src={image6}
-											alt='Features tile icon 06'
-											width={64}
-											height={64}
-										/>
-									</div>
-								</div>
-								<div className='features-tiles-item-content'>
-									<h4 className='mt-0 mb-8'>Robust Workflow</h4>
-									<p className='m-0 text-sm'>
-										Duis aute irure dolor in reprehenderit in voluptate velit
-										esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-										occaecat cupidatat.
+										1 lucky Diadragon owner will be the first ever person to use
+										or gift a Life Drop and receive an exclusive ultra rare
+										Diadragon!
 									</p>
 								</div>
 							</div>

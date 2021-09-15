@@ -1,120 +1,123 @@
-import React from 'react';
-import classNames from 'classnames';
-import { SectionTilesProps } from '../../utils/SectionProps';
-import SectionHeader from './partials/SectionHeader';
+import React from "react";
+import classNames from "classnames";
+import { SectionTilesProps } from "../../utils/SectionProps";
+import SectionHeader from "./partials/SectionHeader";
 
 const propTypes = {
-  ...SectionTilesProps.types
-}
+	...SectionTilesProps.types,
+};
 
 const defaultProps = {
-  ...SectionTilesProps.defaults
-}
+	...SectionTilesProps.defaults,
+};
 
 const Testimonial = ({
-  className,
-  topOuterDivider,
-  bottomOuterDivider,
-  topDivider,
-  bottomDivider,
-  hasBgColor,
-  invertColor,
-  pushLeft,
-  ...props
+	className,
+	topOuterDivider,
+	bottomOuterDivider,
+	topDivider,
+	bottomDivider,
+	hasBgColor,
+	invertColor,
+	pushLeft,
+	...props
 }) => {
+	const outerClasses = classNames(
+		"testimonial section",
+		topOuterDivider && "has-top-divider",
+		bottomOuterDivider && "has-bottom-divider",
+		hasBgColor && "has-bg-color",
+		invertColor && "invert-color",
+		className
+	);
 
-  const outerClasses = classNames(
-    'testimonial section',
-    topOuterDivider && 'has-top-divider',
-    bottomOuterDivider && 'has-bottom-divider',
-    hasBgColor && 'has-bg-color',
-    invertColor && 'invert-color',
-    className
-  );
+	const innerClasses = classNames(
+		"testimonial-inner section-inner",
+		topDivider && "has-top-divider",
+		bottomDivider && "has-bottom-divider"
+	);
 
-  const innerClasses = classNames(
-    'testimonial-inner section-inner',
-    topDivider && 'has-top-divider',
-    bottomDivider && 'has-bottom-divider'
-  );
+	const tilesClasses = classNames("tiles-wrap", pushLeft && "push-left");
 
-  const tilesClasses = classNames(
-    'tiles-wrap',
-    pushLeft && 'push-left'
-  );
+	const sectionHeader = {
+		title: "Where is this money coming from?",
+		paragraph:
+			"Like other NFT projects, Diadragons takes 6% royalties on all sales. These are like sales tax but with a purpose.",
+	};
 
-  const sectionHeader = {
-    title: 'Customer testimonials',
-    paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
-  };
+	return (
+		<section {...props} className={outerClasses}>
+			<div className='container'>
+				<div className={innerClasses}>
+					<SectionHeader data={sectionHeader} className='center-content' />
+					<div className={tilesClasses}>
+						<div
+							className='tiles-item reveal-from-right'
+							data-reveal-delay='200'>
+							<div className='tiles-item-inner'>
+								<div className='testimonial-item-content'>
+									<p className='testimonial-title'>2% to Creators</p>
+									<p className='text-sm mb-0'>
+										1% will go to our amazing artists. We are selling art after
+										all, so it only makes sense that art is a permanent part of
+										our future income. 1% will go to the creators and organizers
+										of this project who will work tirelessly to ensure that all
+										Diadragon owners receive an endless stream of value and
+										community conversation.
+									</p>
+								</div>
+							</div>
+						</div>
 
-  return (
-    <section
-      {...props}
-      className={outerClasses}
-    >
-      <div className="container">
-        <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}>
+						<div className='tiles-item reveal-from-bottom'>
+							<div className='tiles-item-inner'>
+								<div className='testimonial-item-content'>
+									<p className='testimonial-title'>2% to the Community</p>
+									<p className='text-sm mb-0'>
+										Giving the people what they want and need! With all of the
+										chaos we’ve endured this year we want to gift experiences
+										that grow the health and happiness of Diadragon owners. They
+										are supporting the health and happiness of families with
+										diabetes so the Diadragons want to gift it right back. Uno
+										reverse card.
+									</p>
+								</div>
+							</div>
+						</div>
 
-            <div className="tiles-item reveal-from-right" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Roman Level</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-bottom">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Diana Rynzhuk</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="tiles-item reveal-from-left" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
-                </div>
-                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Ben Stafford</span>
-                  <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+						<div
+							className='tiles-item reveal-from-left'
+							data-reveal-delay='200'>
+							<div className='tiles-item-inner'>
+								<p className='testimonial-title'>2% to Cause</p>
+								<div className='testimonial-item-content'>
+									<p className='text-sm mb-0'>
+										We thought long and hard about how to do this right. It’s a
+										lot for our intro page so we wrote a blog about it. And for
+										those of you who don’t like reading, here’s a video (link)
+									</p>
+								</div>
+							</div>
+						</div>
+						<div
+							className='tiles-item reveal-from-right'
+							data-reveal-delay='200'>
+							<div className='tiles-item-inner'>
+								<p className='testimonial-title'>The other 94%?</p>
+								<div className='testimonial-item-content'>
+									<p className='text-sm mb-0'>
+										To you of course! When you sell your Diadragon you keep the
+										money. It’s like buying and selling any collectible item.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+};
 
 Testimonial.propTypes = propTypes;
 Testimonial.defaultProps = defaultProps;
