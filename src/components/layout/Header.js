@@ -41,46 +41,50 @@ const Header = ({
 	const hamburger = useRef(null);
 
 	function addWalletListener() {
-		if (window.ethereum) {
-			window.ethereum.on("accountsChanged", (accounts) => {
-				if (accounts.length > 0) {
-					setWallet(accounts[0]);
-					setStatus("👆🏽 Write a message in the text-field above.");
-				} else {
-					setWallet("");
-					setStatus("🦊 Connect to Metamask using the top right button.");
-				}
-			});
-		} else {
-			setStatus(
-				<p>
-					{" "}
-					🦊{" "}
-					<a target='_blank' href={`https://metamask.io/download.html`}>
-						You must install Metamask, a virtual Ethereum wallet, in your
-						browser.
-					</a>
-				</p>
-			);
-		}
+		try {
+			if (window.ethereum) {
+				window.ethereum.on("accountsChanged", (accounts) => {
+					if (accounts.length > 0) {
+						setWallet(accounts[0]);
+						setStatus("👆🏽 Write a message in the text-field above.");
+					} else {
+						setWallet("");
+						setStatus("🦊 Connect to Metamask using the top right button.");
+					}
+				});
+			} else {
+				setStatus(
+					<p>
+						{" "}
+						🦊{" "}
+						<a target='_blank' href={`https://metamask.io/download.html`}>
+							You must install Metamask, a virtual Ethereum wallet, in your
+							browser.
+						</a>
+					</p>
+				);
+			}
+		} catch (error) {}
 	}
 
 	useEffect(async () => {
-		isActive && openMenu();
-		document.addEventListener("keydown", keyPress);
-		document.addEventListener("click", clickOutside);
-		const { address, status } = await getCurrentWalletConnected();
+		try {
+			isActive && openMenu();
+			document.addEventListener("keydown", keyPress);
+			document.addEventListener("click", clickOutside);
+			const { address, status } = await getCurrentWalletConnected();
 
-		setWallet(address);
-		setStatus(status);
+			setWallet(address);
+			setStatus(status);
 
-		addWalletListener();
+			addWalletListener();
 
-		return () => {
-			document.removeEventListener("keydown", keyPress);
-			document.removeEventListener("click", clickOutside);
-			closeMenu();
-		};
+			return () => {
+				document.removeEventListener("keydown", keyPress);
+				document.removeEventListener("click", clickOutside);
+				closeMenu();
+			};
+		} catch (error) {}
 	});
 
 	const openMenu = () => {
