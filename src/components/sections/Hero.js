@@ -71,7 +71,7 @@ const Hero = ({
 		} else {
 			// Render a countdown
 			return (
-				<span>
+				<span style={{ color: "#23ccfa" }}>
 					{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
 				</span>
 			);
@@ -101,7 +101,7 @@ const Hero = ({
 						<h1
 							className='mt-0 mb-16 reveal-from-bottom'
 							data-reveal-delay='200'>
-							DiaDragons
+							Countdown to launch
 						</h1>
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown

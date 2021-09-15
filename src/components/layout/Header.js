@@ -39,32 +39,36 @@ const Header = ({
 	const nav = useRef(null);
 	const hamburger = useRef(null);
 
-	useEffect(async () => {
-		const { address, status } = await getCurrentWalletConnected();
-
-		setWallet(address);
-		setStatus(status);
-
-		addWalletListener();
-	}, []);
-
 	function addWalletListener() {
-		if (window.ethereum) {
-			window.ethereum.on("accountsChanged", (accounts) => {
-				if (accounts.length > 0) {
-					setWallet(accounts[0]);
-					setStatus("👆🏽 Write a message in the text-field above.");
-				} else {
-					setWallet("");
-					setStatus("🦊 Connect to Metamask using the top right button.");
-				}
-			});
-		} else {
+		try {
+			if (window.ethereum) {
+				window.ethereum.on("accountsChanged", (accounts) => {
+					if (accounts.length > 0) {
+						setWallet(accounts[0]);
+						setStatus("👆🏽 Write a message in the text-field above.");
+					} else {
+						setWallet("");
+						setStatus("🦊 Connect to Metamask using the top right button.");
+					}
+				});
+			} else {
+				setStatus(
+					<p>
+						{" "}
+						🦊{" "}
+						<a href={`https://metamask.io/download.html`}>
+							You must install Metamask, a virtual Ethereum wallet, in your
+							browser.
+						</a>
+					</p>
+				);
+			}
+		} catch (error) {
 			setStatus(
 				<p>
 					{" "}
 					🦊{" "}
-					<a target='_blank' href={`https://metamask.io/download.html`}>
+					<a href={`https://metamask.io/download.html`}>
 						You must install Metamask, a virtual Ethereum wallet, in your
 						browser.
 					</a>
@@ -73,11 +77,29 @@ const Header = ({
 		}
 	}
 
-	const connectWalletPressed = async () => {
-		const walletResponse = await connectWallet();
-		setStatus(walletResponse.status);
-		setWallet(walletResponse.address);
-	};
+	useEffect(() => {
+		try {
+			async function fetchData() {
+				isActive && openMenu();
+				document.addEventListener("keydown", keyPress);
+				document.addEventListener("click", clickOutside);
+				const { address, status } = await getCurrentWalletConnected();
+
+				setWallet(address);
+				setStatus(status);
+
+				addWalletListener();
+
+				return () => {
+					document.removeEventListener("keydown", keyPress);
+					document.removeEventListener("click", clickOutside);
+					closeMenu();
+				};
+			}
+			return fetchData();
+		} catch (error) {}
+	});
+
 	const openMenu = () => {
 		document.body.classList.add("off-nav-is-active");
 		nav.current.style.maxHeight = nav.current.scrollHeight + "px";
@@ -88,6 +110,12 @@ const Header = ({
 		document.body.classList.remove("off-nav-is-active");
 		nav.current && (nav.current.style.maxHeight = null);
 		setIsactive(false);
+	};
+
+	const connectWalletPressed = async () => {
+		const walletResponse = await connectWallet();
+		setStatus(walletResponse.status);
+		setWallet(walletResponse.address);
 	};
 
 	const keyPress = (e) => {
