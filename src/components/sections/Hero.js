@@ -31,7 +31,7 @@ const Hero = ({
 	const [status, setStatus] = useState("");
 
 	const onMintPressed = async () => {
-		const { success, status } = await mintNFT();
+		const { status } = await mintNFT();
 		setStatus(status);
 	};
 

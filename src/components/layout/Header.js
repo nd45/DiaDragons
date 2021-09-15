@@ -35,7 +35,7 @@ const Header = ({
 }) => {
 	const [isActive, setIsactive] = useState(false);
 	const [walletAddress, setWallet] = useState("");
-	const [status, setStatus] = useState("");
+	const [setStatus] = useState("");
 	const nav = useRef(null);
 	const hamburger = useRef(null);
 
@@ -56,7 +56,7 @@ const Header = ({
 					<p>
 						{" "}
 						🦊{" "}
-						<a target='_blank' href={`https://metamask.io/download.html`}>
+						<a href={`https://metamask.io/download.html`}>
 							You must install Metamask, a virtual Ethereum wallet, in your
 							browser.
 						</a>
@@ -66,23 +66,26 @@ const Header = ({
 		} catch (error) {}
 	}
 
-	useEffect(async () => {
+	useEffect(() => {
 		try {
-			isActive && openMenu();
-			document.addEventListener("keydown", keyPress);
-			document.addEventListener("click", clickOutside);
-			const { address, status } = await getCurrentWalletConnected();
+			async function fetchData() {
+				isActive && openMenu();
+				document.addEventListener("keydown", keyPress);
+				document.addEventListener("click", clickOutside);
+				const { address, status } = await getCurrentWalletConnected();
 
-			setWallet(address);
-			setStatus(status);
+				setWallet(address);
+				setStatus(status);
 
-			addWalletListener();
+				addWalletListener();
 
-			return () => {
-				document.removeEventListener("keydown", keyPress);
-				document.removeEventListener("click", clickOutside);
-				closeMenu();
-			};
+				return () => {
+					document.removeEventListener("keydown", keyPress);
+					document.removeEventListener("click", clickOutside);
+					closeMenu();
+				};
+			}
+			return fetchData();
 		} catch (error) {}
 	});
 
