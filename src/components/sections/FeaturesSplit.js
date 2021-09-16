@@ -52,9 +52,9 @@ const FeaturesSplit = ({
 	);
 
 	const sectionHeader = {
-		title: "Workflow that just works",
+		title: "What are Diadragons?",
 		paragraph:
-			"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.",
+			"Diadragons are adorable dragons who dedicate their lives to keeping humanshealthy and happy. Like a puppy, but less fluffy. They are one of a kind NFTs that live on the Ethereum blockchain.",
 	};
 
 	return (
@@ -67,15 +67,21 @@ const FeaturesSplit = ({
 							<div
 								className='split-item-content center-content-mobile reveal-from-left'
 								data-reveal-container='.split-item'>
-								<div className='text-xxs text-color-primary fw-600 tt-u mb-8'>
-									Lightning fast workflow
-								</div>
-								<h3 className='mt-0 mb-12'>Data-driven insights</h3>
+								<h3 className='mt-0 mb-12'>Why should I adopt a Diadragon? </h3>
 								<p className='m-0'>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua
-									— Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat.
+									Besides being the cutest, cuddliest digital art, Diadragons
+									have two purposes: To create Life Juice, and to keep you happy
+									and healthy.
+								</p>
+								<h3 className='mt-0 mb-12'>Life Juice?</h3>
+								<p className='m-0'>
+									The lore: The Diadragon you adopt will fly your donation of
+									Ethereum to the Cloud Converter in the sky where it will be
+									processed into a magical substance called Life Juice. Once the
+									Cloud Converter is full, it squeezes out a Life Drop. In the
+									real world this translates to a full year of insulin and
+									glucose monitoring supplies for someone who needs it to
+									survive.
 								</p>
 							</div>
 							<div
@@ -97,15 +103,19 @@ const FeaturesSplit = ({
 							<div
 								className='split-item-content center-content-mobile reveal-from-right'
 								data-reveal-container='.split-item'>
-								<div className='text-xxs text-color-primary fw-600 tt-u mb-8'>
-									Lightning fast workflow
-								</div>
-								<h3 className='mt-0 mb-12'>Data-driven insights</h3>
+								<h3 className='mt-0 mb-12'>Why? </h3>
 								<p className='m-0'>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua
-									— Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat.
+									When we’ve collected enough ethereum to build a Life Drop, we
+									will select one NFT holder and give them control over the Life
+									Drop. They can use it on themselves, gift it to a friend, or
+									gift it to a family suggested by one of our partner charities.
+								</p>
+								<h3 className='mt-0 mb-12'>How?</h3>
+								<p className='m-0'>
+									When we’ve collected enough ethereum to build a Life Drop, we
+									will select one NFT holder and give them control over the Life
+									Drop. They can use it on themselves, gift it to a friend, or
+									gift it to a family suggested by one of our partner charities.
 								</p>
 							</div>
 							<div
@@ -127,15 +137,24 @@ const FeaturesSplit = ({
 							<div
 								className='split-item-content center-content-mobile reveal-from-left'
 								data-reveal-container='.split-item'>
-								<div className='text-xxs text-color-primary fw-600 tt-u mb-8'>
-									Lightning fast workflow
-								</div>
-								<h3 className='mt-0 mb-12'>Data-driven insights</h3>
+								<h3 className='mt-0 mb-12'>Keeping you happy and healthy.</h3>
 								<p className='m-0'>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua
-									— Ut enim ad minim veniam, quis nostrud exercitation ullamco
-									laboris nisi ut aliquip ex ea commodo consequat.
+									Like any pet, to your DiaDragon, you are the main character.
+									They are here to support you in all the ways they can. Since
+									they are digital and can’t give you real life cuddles like
+									your favorite pupper, they give you opportunities to
+									experience life differently. A portion of NFT sales (exact
+									numbers below) will go towards YOU. We will be conducting
+									giveaways every single week with a focus on health and life
+									experience. Always wanted a personal trainer but never made
+									the commitment? Your Diadragon will bring you one. Wanted to
+									take your girl (or man (or best friend)) on a trip to Europe
+									but haven’t prioritized it? Your Diadragon may have the whole
+									thing already planned out for you. Not only do you have
+									chances at winning every week (yes you can win more than once)
+									but you also have the opportunity to be a part of a community
+									of other dragon loving humans that are also excited about
+									health and experiences!
 								</p>
 							</div>
 							<div

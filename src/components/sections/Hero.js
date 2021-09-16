@@ -8,6 +8,7 @@ import Modal from "../elements/Modal";
 import placeholder from "./../../assets/images/video-placeholder.jpg";
 import { mintNFT } from "../../util/interact.js";
 import Countdown, { zeroPad } from "react-countdown";
+import egg from "./../../assets/images/egg.gif";
 
 const propTypes = {
 	...SectionProps.types,
@@ -48,6 +49,7 @@ const Hero = ({
 	const Completionist = () => {
 		return (
 			<div>
+				<p></p>
 				<ButtonGroup>
 					<Button
 						tag='a'
@@ -69,13 +71,27 @@ const Hero = ({
 	const renderer = ({ days, hours, minutes, seconds, completed }) => {
 		if (completed) {
 			// Render a completed state
-			return <Completionist />;
+			return (
+				<div>
+					<h3 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
+						Diadragons minted: 0/1000
+					</h3>
+					<img src={egg} alt='loading...' width={256} height={256} />
+					<Completionist />
+				</div>
+			);
 		} else {
 			// Render a countdown
 			return (
-				<span style={{ color: "#23ccfa" }}>
-					{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-				</span>
+				<div>
+					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
+						Countdown to launch
+					</h1>
+					<span style={{ color: "#23ccfa" }}>
+						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
+						{zeroPad(seconds)}
+					</span>
+				</div>
 			);
 		}
 	};
@@ -100,11 +116,6 @@ const Hero = ({
 			<div className='container-sm'>
 				<div className={innerClasses}>
 					<div className='hero-content'>
-						<h1
-							className='mt-0 mb-16 reveal-from-bottom'
-							data-reveal-delay='200'>
-							Countdown to launch
-						</h1>
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown
 								date={
@@ -115,7 +126,7 @@ const Hero = ({
 							/>
 						</div>
 					</div>
-					<div
+					{/* <div
 						className='hero-figure reveal-from-bottom illustration-element-01'
 						data-reveal-value='20px'
 						data-reveal-delay='800'>
@@ -139,7 +150,7 @@ const Hero = ({
 						handleClose={closeModal}
 						video='https://player.vimeo.com/video/174002812'
 						videoTag='iframe'
-					/>
+					/> */}
 				</div>
 			</div>
 		</section>
