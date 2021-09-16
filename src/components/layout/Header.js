@@ -45,7 +45,6 @@ const Header = ({
 				window.ethereum.on("accountsChanged", (accounts) => {
 					if (accounts.length > 0) {
 						setWallet(accounts[0]);
-						setStatus("👆🏽 Write a message in the text-field above.");
 					} else {
 						setWallet("");
 						setStatus("🦊 Connect to Metamask using the top right button.");
@@ -83,6 +82,7 @@ const Header = ({
 				isActive && openMenu();
 				document.addEventListener("keydown", keyPress);
 				document.addEventListener("click", clickOutside);
+
 				const { address, status } = await getCurrentWalletConnected();
 
 				setWallet(address);
@@ -98,7 +98,7 @@ const Header = ({
 			}
 			return fetchData();
 		} catch (error) {}
-	});
+	}, [walletAddress]);
 
 	const openMenu = () => {
 		document.body.classList.add("off-nav-is-active");
