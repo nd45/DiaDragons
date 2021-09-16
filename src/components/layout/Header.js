@@ -96,9 +96,10 @@ const Header = ({
 					closeMenu();
 				};
 			}
+			connectWalletPressed();
 			return fetchData();
 		} catch (error) {}
-	}, [walletAddress]);
+	}, []);
 
 	const openMenu = () => {
 		document.body.classList.add("off-nav-is-active");

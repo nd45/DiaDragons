@@ -20,19 +20,17 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     // Constants
     uint256 public constant TIER1_PRICE = .070 ether;
     uint256 public constant TIER1_NUM_TOKENS = 1;
-    uint256 public constant MAX_SUPPLY = 10000;
+    uint256 public constant MAX_SUPPLY = 10;
     string public DIADRAGONS_PROVENANCE = "";
 
     string public baseURI;
-    string public _preRevealURI;
+    string private _preRevealURI;
 
     event SaleStarted();
     event SaleStopped();
     event TokenMinted(uint256 supply);
 
-    constructor(string memory _initBaseURI) ERC721("DiaDragons", "DD") {
-        setBaseURI(_initBaseURI);
-    }
+    constructor() ERC721("DiaDragons", "DD") {}
 
     function startSale() public onlyOwner {
         _isSaleActive = true;
@@ -115,17 +113,6 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
         }
     }
 
-    function airdropThirteenthDiaDragon(address recipient) external onlyOwner {
-        require(
-            !_isSaleActive &&
-                (totalSupply() >= MAX_SUPPLY ||
-                    block.timestamp >= revealTimeStamp),
-            "The 13th dragon will only be airdropped once the sale has concluded"
-        );
-        uint256 tokenId = totalSupply() + MAX_SUPPLY; // Disallow 13th dragon ids from 0-12000 range
-        _safeMint(recipient, tokenId);
-    }
-
     function _mintDiaDragons(uint256 numDiaDragons, address recipient)
         internal
     {
@@ -196,9 +183,14 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
             _exists(tokenId),
             "ERC721Metadata: URI query for nonexistent token"
         );
-
-        string memory currentBaseURI = _baseURI();
-        return string(abi.encodePacked(currentBaseURI, tokenId.toString()));
+        if (totalSupply() >= MAX_SUPPLY || block.timestamp >= revealTimeStamp) {
+            uint256 offsetId = tokenId.add(MAX_SUPPLY.sub(offsetIndex)).mod(
+                MAX_SUPPLY
+            );
+            return string(abi.encodePacked(_baseURI(), offsetId.toString()));
+        } else {
+            return _preRevealURI;
+        }
     }
 
     function _beforeTokenTransfer(

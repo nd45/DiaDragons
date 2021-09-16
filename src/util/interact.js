@@ -2,7 +2,7 @@
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
-const contractAddress = "0xd832B8eED0E5B8f124eCa1Cc2dFe2e5dCf60746d";
+const contractAddress = "0x1F9E51199D587190120C8180D0Ce0B9bd61D0229";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
@@ -103,34 +103,42 @@ export const mintNFT = async () => {
 	//   };
 	// }
 	// const tokenURI = pinataResponse.pinataUrl;
-
-	window.contract = await new web3.eth.Contract(
-		contractABI.abi,
-		contractAddress
-	);
-
-	const transactionParameters = {
-		to: contractAddress, // Required except during contract publications.
-		from: window.ethereum.selectedAddress, // must match user's active address.
-		value: "100000000000000",
-		data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
-	};
-
 	try {
-		const txHash = await window.ethereum.request({
-			method: "eth_sendTransaction",
-			params: [transactionParameters],
-		});
-		return {
-			success: true,
-			status:
-				"✅ Check out your transaction on Etherscan: https://rinkeby.etherscan.io/tx/" +
-				txHash,
+		window.contract = await new web3.eth.Contract(
+			contractABI.abi,
+			contractAddress
+		);
+
+		const transactionParameters = {
+			to: contractAddress, // Required except during contract publications.
+			from: window.ethereum.selectedAddress, // must match user's active address.
+			value: web3.utils.numberToHex(
+				web3.utils.toWei((0.07).toString(), "ether")
+			),
+			data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
 		};
+
+		try {
+			const txHash = await window.ethereum.request({
+				method: "eth_sendTransaction",
+				params: [transactionParameters],
+			});
+			return {
+				success: true,
+				status:
+					"✅ Check out your transaction on Etherscan: https://rinkeby.etherscan.io/tx/" +
+					txHash,
+			};
+		} catch (error) {
+			return {
+				success: false,
+				status: "😥 Something went wrong: wallet not found",
+			};
+		}
 	} catch (error) {
 		return {
 			success: false,
-			status: "😥 Something went wrong: " + error.message,
+			status: "😥 Something went wrong: wallet not found",
 		};
 	}
 };

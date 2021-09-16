@@ -47,19 +47,21 @@ const Hero = ({
 
 	const Completionist = () => {
 		return (
-			<ButtonGroup>
-				<Button
-					tag='a'
-					color='primary'
-					wideMobile
-					id='mintButton'
-					onClick={onMintPressed}>
-					Mint DiaDragon
-				</Button>
+			<div>
+				<ButtonGroup>
+					<Button
+						tag='a'
+						color='primary'
+						wideMobile
+						id='mintButton'
+						onClick={onMintPressed}>
+						Mint DiaDragon
+					</Button>
+				</ButtonGroup>
 				<p id='status' style={{ color: "red" }}>
 					{status}
 				</p>
-			</ButtonGroup>
+			</div>
 		);
 	};
 
@@ -106,9 +108,8 @@ const Hero = ({
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown
 								date={
-									Date.now() +
-									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() -
-									Date.now()
+									//Date.now() +
+									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now()
 								}
 								renderer={renderer}
 							/>
