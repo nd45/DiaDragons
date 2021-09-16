@@ -1,1 +1,17 @@
-<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg"><g stroke-width="2" fill="none" fill-rule="evenodd"><ellipse stroke="#ACADFF" stroke-linecap="square" cx="32" cy="32" rx="5.5" ry="11"/><path d="M32 21v22M21 32h22" stroke="#FFF"/><circle stroke="#FFF" stroke-linecap="square" cx="32" cy="32" r="11"/></g></svg>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="96.000000pt" height="96.000000pt" viewBox="0 0 96.000000 96.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M386 870 c-63 -16 -153 -70 -197 -117 -22 -24 -55 -74 -72 -111 -29
+-61 -32 -76 -32 -163 0 -90 2 -99 37 -171 45 -91 103 -147 196 -191 61 -29 76
+-32 162 -32 86 0 101 3 162 32 93 44 151 100 196 191 35 72 37 81 37 172 0 91
+-2 100 -37 172 -68 136 -188 217 -336 224 -42 2 -94 -1 -116 -6z m75 -80 c18
+-10 19 -24 19 -310 0 -279 -1 -300 -18 -309 -46 -24 -177 40 -233 114 -91 118
+-91 272 0 390 37 49 117 102 174 115 18 5 33 8 35 9 2 1 12 -4 23 -9z"/>
+</g>
+</svg>

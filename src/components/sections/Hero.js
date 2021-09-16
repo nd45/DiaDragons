@@ -87,10 +87,10 @@ const Hero = ({
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
 						Countdown to launch
 					</h1>
-					<span style={{ color: "#23ccfa" }}>
+					<h2 style={{ color: "#23ccfa" }}>
 						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
 						{zeroPad(seconds)}
-					</span>
+					</h2>
 				</div>
 			);
 		}
