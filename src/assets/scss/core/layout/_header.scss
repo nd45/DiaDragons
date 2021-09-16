@@ -91,6 +91,12 @@
 @include media("<=medium") {
 	.header-nav-toggle {
 		display: block;
+		position: absolute;
+		top: 50%;
+		right: 5%;
+		+ .header-nav-right {
+			flex-grow: 0;
+		}
 
 		// Header navigation when the hamburger is a previous sibling
 		+ .header-nav {
