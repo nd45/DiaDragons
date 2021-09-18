@@ -10,12 +10,29 @@ import { mintNFT } from "../../util/interact.js";
 import Countdown, { zeroPad } from "react-countdown";
 import egg from "./../../assets/images/egg.gif";
 
+const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
+const contractABI = require("../../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
+const contractAddress = "0x1F9E51199D587190120C8180D0Ce0B9bd61D0229";
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+const web3 = createAlchemyWeb3(alchemyKey);
+
+//window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
+
 const propTypes = {
 	...SectionProps.types,
 };
 
 const defaultProps = {
 	...SectionProps.defaults,
+};
+
+let totalSupply = async () => {
+	window.contract = await new web3.eth.Contract(
+		contractABI.abi,
+		contractAddress
+	);
+
+	window.contract.methods.gettotalSupply().encodeABI();
 };
 
 const Hero = ({
@@ -74,7 +91,7 @@ const Hero = ({
 			return (
 				<div>
 					<h3 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Diadragons minted: 0/1000
+						Diadragons minted: {totalSupply}/1000
 					</h3>
 					<img src={egg} alt='loading...' width={256} height={256} />
 					<Completionist />
@@ -85,12 +102,13 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Countdown to launch
+						Drop time: TBD
 					</h1>
-					<h2 style={{ color: "#23ccfa" }}>
+					<img src={egg} alt='loading...' width={256} height={256} />
+					{/* <h2 style={{ color: "#23ccfa" }}>
 						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
 						{zeroPad(seconds)}
-					</h2>
+					</h2> */}
 				</div>
 			);
 		}
@@ -119,8 +137,9 @@ const Hero = ({
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown
 								date={
-									//Date.now() +
-									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now()
+									Date.now() +
+									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() -
+									Date.now()
 								}
 								renderer={renderer}
 							/>

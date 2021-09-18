@@ -92,9 +92,14 @@ const Testimonial = ({
 								<p className='testimonial-title'>2% to Cause</p>
 								<div className='testimonial-item-content'>
 									<p className='text-sm mb-0'>
-										We thought long and hard about how to do this right. It’s a
-										lot for our intro page so we wrote a blog about it. And for
-										those of you who don’t like reading, here’s a video (link)
+										The main purpose of this project is to fund Life Drops. The
+										most direct thing we as a collective group can do for
+										someone with diabetes is to cover the supplies and insulin
+										that their government and insurance policies chose not to
+										cover. We hope to see the future of decentralized giving
+										focus more on direct results. Showing larger organizations
+										and governments what we value and how much can be done
+										without huge lobbying and marketing budgets.
 									</p>
 								</div>
 							</div>

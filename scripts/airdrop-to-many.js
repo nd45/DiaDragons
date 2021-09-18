@@ -22,7 +22,13 @@ async function main() {
 		nonce: nonce,
 		gas: 5000000,
 		maxFeePerGas: 1000000108,
-		data: DiaDragonsContract.methods.withdraw().encodeABI(),
+		data: DiaDragonsContract.methods
+			.airdropDiaDragonToMany([
+				"0xBb13085F138798fB3Aa42D95797143301493488c",
+				"0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+				"0xf77662E7b1c66dCB5112e06bB5e174FF42116198",
+			])
+			.encodeABI(),
 	};
 
 	// Sign the transaction

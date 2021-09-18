@@ -2,7 +2,7 @@
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
-const contractAddress = "0x1F9E51199D587190120C8180D0Ce0B9bd61D0229";
+const contractAddress = "0x14881056993d8C65c1712905C1860f6cccC4f9D2";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 

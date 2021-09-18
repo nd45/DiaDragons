@@ -76,9 +76,9 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>10% sold</h4>
 									<p className='m-0 text-sm'>
-										1 lucky Diadragon owner will be the first ever person to use
-										or gift a Life Drop and receive an exclusive ultra rare
-										Diadragon!
+										Life Drops unlocked. 1 lucky Diadragon owner will be the
+										first ever person to use or gift a Life Drop and receive an
+										exclusive ultra rare Diadragon!
 									</p>
 								</div>
 							</div>
@@ -101,9 +101,7 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>25% sold</h4>
 									<p className='m-0 text-sm'>
-										1 lucky Diadragon owner will be the first ever person to use
-										or gift a Life Drop and receive an exclusive ultra rare
-										Diadragon!
+										Diadragon’s backstory and mission animation unlocked.
 									</p>
 								</div>
 							</div>
@@ -126,9 +124,8 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>50% sold</h4>
 									<p className='m-0 text-sm'>
-										1 lucky Diadragon owner will be the first ever person to use
-										or gift a Life Drop and receive an exclusive ultra rare
-										Diadragon!
+										The second Life Drop & Rare Diadragon recipient will be
+										chosen from the first 2500 Diadragon owners.
 									</p>
 								</div>
 							</div>
@@ -149,9 +146,8 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>75% sold</h4>
 									<p className='m-0 text-sm'>
-										1 lucky Diadragon owner will be the first ever person to use
-										or gift a Life Drop and receive an exclusive ultra rare
-										Diadragon!
+										Community animations unlocked. Vote on which stories to tell
+										and which Diadragon will be featured.
 									</p>
 								</div>
 							</div>
@@ -174,9 +170,9 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>100% sold</h4>
 									<p className='m-0 text-sm'>
-										1 lucky Diadragon owner will be the first ever person to use
-										or gift a Life Drop and receive an exclusive ultra rare
-										Diadragon!
+										Weekly giveaways Unlocked. Follow our Twitter to see how to
+										win! Life Drops will continue to be awarded as the project
+										grows.
 									</p>
 								</div>
 							</div>

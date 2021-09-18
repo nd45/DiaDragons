@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import youtubeLogo from "../../../assets/images/youtubeLogo.svg";
+import instagramLogo from "../../../assets/images/instagramLogo.svg";
 import discordLogo from "../../../assets/images/discordLogo.svg";
 
 const FooterSocial = ({ className, ...props }) => {
@@ -9,9 +9,9 @@ const FooterSocial = ({ className, ...props }) => {
 	return (
 		<div {...props} className={classes}>
 			<ul className='list-reset'>
-				<a href='https://facebook.com/'>
+				<a href='https://instagram.com/'>
 					<img
-						src={youtubeLogo}
+						src={instagramLogo}
 						alt='Features split 01'
 						width={24}
 						height={24}
