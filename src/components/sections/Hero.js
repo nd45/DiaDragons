@@ -102,9 +102,12 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Drop time: TBD
+						Coming soon
 					</h1>
-					<img src={egg} alt='loading...' width={256} height={256} />
+					<p className='m-0 mb-16'>
+						Join our Discord to be one of the first to mint a Diadragon!
+					</p>
+					<img src={egg} alt='loading...' width={300} height={300} />
 					{/* <h2 style={{ color: "#23ccfa" }}>
 						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
 						{zeroPad(seconds)}

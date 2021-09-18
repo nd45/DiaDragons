@@ -5,7 +5,7 @@ import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
 import image1 from "./../../assets/images/features-split-image-01.png";
 import image2 from "./../../assets/images/features-split-image-02.png";
-import image3 from "./../../assets/images/features-split-image-03.jpg";
+import image3 from "./../../assets/images/features-split-image-03.png";
 
 const propTypes = {
 	...SectionSplitProps.types,
@@ -54,7 +54,7 @@ const FeaturesSplit = ({
 	const sectionHeader = {
 		title: "What are Diadragons?",
 		paragraph:
-			"Diadragons are adorable dragons who dedicate their lives to keeping humanshealthy and happy. Like a puppy, but less fluffy. They are one of a kind NFTs that live on the Ethereum blockchain.",
+			"Diadragons are adorable dragons who dedicate their lives to keeping humans healthy and happy. Like a puppy, but less fluffy. They are one of a kind NFTs that live on the Ethereum blockchain.",
 	};
 
 	return (
@@ -76,7 +76,7 @@ const FeaturesSplit = ({
 								<h3 className='mt-0 mb-12'>Life Juice?</h3>
 								<p className='m-0'>
 									The lore: The Diadragon you adopt will fly your donation of
-									Etherium to the Cloud Converter in the sky where it will be
+									Ethereum to the Cloud Converter in the sky where it will be
 									processed into a magical substance called Life Juice. Once the
 									Cloud Converter is full, it squeezes out a Life Drop. In the
 									real world this translates to a full year of insulin and
@@ -91,7 +91,7 @@ const FeaturesSplit = ({
 								)}
 								data-reveal-container='.split-item'>
 								<Image
-									src={image1}
+									src={image3}
 									alt='Features split 01'
 									width={528}
 									height={396}
@@ -112,7 +112,7 @@ const FeaturesSplit = ({
 								</p>
 								<h3 className='mt-0 mb-12'>How?</h3>
 								<p className='m-0'>
-									When we’ve collected enough etherium to build a Life Drop, we
+									When we’ve collected enough Ethereum to build a Life Drop, we
 									will select one NFT holder and give them control over the Life
 									Drop. They can use it on themselves, gift it to a friend, or
 									gift it to a family suggested by one of our partner charities.
@@ -155,7 +155,7 @@ const FeaturesSplit = ({
 								)}
 								data-reveal-container='.split-item'>
 								<Image
-									src={image3}
+									src={image1}
 									alt='Features split 03'
 									width={528}
 									height={396}
