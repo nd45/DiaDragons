@@ -54,7 +54,7 @@ const FeaturesSplit = ({
 	const sectionHeader = {
 		title: "What are Diadragons?",
 		paragraph:
-			"Diadragons are adorable dragons who dedicate their lives to keeping humans healthy and happy. Like a puppy, but less fluffy. They are one of a kind NFTs that live on the Ethereum blockchain.",
+			"Diadragons are adorable dragons who dedicate their lives to keeping humans healthy and happy. Like a puppy, but less fluffy. They are one-of-a-kind NFTs that live on the Ethereum blockchain.",
 	};
 
 	return (
@@ -79,8 +79,8 @@ const FeaturesSplit = ({
 									Ethereum to the Cloud Converter in the sky where it will be
 									processed into a magical substance called Life Juice. Once the
 									Cloud Converter is full, it squeezes out a Life Drop. In the
-									real world this translates to a full year of insulin and
-									glucose monitoring supplies for someone who needs it to
+									real world, this translates to a year’s worth of insulin and
+									glucose monitoring supplies for someone who needs them to
 									survive.
 								</p>
 							</div>

@@ -76,9 +76,9 @@ const Testimonial = ({
 									<p className='text-sm mb-0'>
 										Giving the people what they want and need! With all of the
 										chaos we’ve endured this year we want to gift experiences
-										that grow the health and happiness of Diadragon owners. They
+										that grow the health and happiness of Diadragon owners. You
 										are supporting the health and happiness of families with
-										diabetes so the Diadragons want to gift it right back. Uno
+										diabetes and your dragon wants to gift it right back. Uno
 										reverse card.
 									</p>
 								</div>
