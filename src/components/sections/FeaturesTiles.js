@@ -123,8 +123,8 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>50% sold</h4>
 									<p className='m-0 text-sm'>
-										The second Life Drop & Rare Diadragon recipient will be
-										chosen from the first 5000 Diadragon owners.
+										The second Life Drop recipient will be chosen from the first
+										5000 Diadragon owners.
 									</p>
 								</div>
 							</div>
@@ -169,7 +169,7 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>100% sold</h4>
 									<p className='m-0 text-sm'>
-										Weekly giveaways Unlocked. Follow our Twitter to see how to
+										Weekly giveaways unlocked. Follow our Twitter to see how to
 										win! Life Drops will continue to be awarded as the project
 										grows.
 									</p>

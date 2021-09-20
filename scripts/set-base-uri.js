@@ -24,7 +24,7 @@ async function main() {
 		maxFeePerGas: 1000000108,
 		data: DiaDragonsContract.methods
 			.setBaseURI(
-				"https://gateway.pinata.cloud/ipfs/QmUyZaijiycvpme6Y4WAT4HH3cpNgUH4aLHH86atCrP549/"
+				"https://gateway.pinata.cloud/ipfs/QmPBhT33ZzCfpeGtzU14VSafsqZir8XRfrpLwLCyLFHfvu"
 			)
 			.encodeABI(),
 	};
