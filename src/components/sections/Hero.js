@@ -90,11 +90,14 @@ const Hero = ({
 			// Render a completed state
 			return (
 				<div>
-					<h3 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Diadragons minted: {totalSupply}/1000
-					</h3>
+					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
+						Coming soon
+					</h1>
+					<p className='m-0 mb-16'>
+						Join our Discord to be one of the first to mint a Diadragon!
+					</p>
 					<img src={egg} alt='loading...' width={256} height={256} />
-					<Completionist />
+					{/* <Completionist /> */}
 				</div>
 			);
 		} else {
@@ -148,31 +151,17 @@ const Hero = ({
 							/>
 						</div>
 					</div>
-					{/* <div
-						className='hero-figure reveal-from-bottom illustration-element-01'
-						data-reveal-value='20px'
-						data-reveal-delay='800'>
-						<a
-							data-video='https://player.vimeo.com/video/174002812'
-							href='#0'
-							aria-controls='video-modal'
-							onClick={openModal}>
-							<Image
-								className='has-shadow'
-								src={placeholder}
-								alt='Hero'
-								width={896}
-								height={504}
-							/>
-						</a>
-					</div>
-					<Modal
-						id='video-modal'
-						show={videoModalActive}
-						handleClose={closeModal}
-						video='https://player.vimeo.com/video/174002812'
-						videoTag='iframe'
-					/> */}
+
+					{/* <div className='responsive-video'>
+						<iframe
+							width='560'
+							height='315'
+							src='https://www.youtube.com/embed/0L68m7e7_9w'
+							title='YouTube video player'
+							frameborder='0'
+							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+							allowfullscreen></iframe>
+					</div> */}
 				</div>
 			</div>
 		</section>
