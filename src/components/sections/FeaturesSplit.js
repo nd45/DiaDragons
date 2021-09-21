@@ -110,6 +110,12 @@ const FeaturesSplit = ({
 									hundreds of dollars a month. It’s like paying a second rent,
 									just to stay alive.
 								</p>
+								<h3 className='mt-0 mb-12'>Who?</h3>
+								<p className='m-0'>
+									Two entrepreneurs, two developers, an artist from the UK, and
+									an amazing mentor from the successful NFT project, Space
+									Poggers.
+								</p>
 								<h3 className='mt-0 mb-12'>How?</h3>
 								<p className='m-0'>
 									When we’ve collected enough Ethereum to build a Life Drop, we
