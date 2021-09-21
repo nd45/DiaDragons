@@ -114,7 +114,7 @@ const FeaturesSplit = ({
 								<p className='m-0'>
 									Two entrepreneurs, two developers, an artist from the UK, and
 									an amazing mentor from the successful NFT project, Space
-									Poggers.
+									Poggers. Learn more on our discord.
 								</p>
 								<h3 className='mt-0 mb-12'>How?</h3>
 								<p className='m-0'>
