@@ -9,7 +9,7 @@ const FooterSocial = ({ className, ...props }) => {
 	return (
 		<div {...props} className={classes}>
 			<ul className='list-reset'>
-				<a href='https://instagram.com/'>
+				<a href='https://www.instagram.com/nft.diadragons/?hl=en'>
 					<img
 						src={instagramLogo}
 						alt='Features split 01'
