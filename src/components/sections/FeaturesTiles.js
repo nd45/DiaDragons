@@ -100,7 +100,8 @@ const FeaturesTiles = ({
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>25% sold</h4>
 									<p className='m-0 text-sm'>
-										Diadragon’s backstory and mission animation unlocked.
+										Discover the hidden meaning and metaphors behind the
+										Diadragon backstory video on our Youtube channel
 									</p>
 								</div>
 							</div>
