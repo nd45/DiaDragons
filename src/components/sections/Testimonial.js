@@ -42,7 +42,7 @@ const Testimonial = ({
 	const sectionHeader = {
 		title: "Where is this money coming from?",
 		paragraph:
-			"Like other NFT projects, Diadragons takes 6% royalties on all sales. These are like sales tax but with a purpose.",
+			"Like other NFT projects, Diadragons takes 10% royalties on all sales. These are like sales tax but with a purpose.",
 	};
 
 	return (
@@ -89,7 +89,7 @@ const Testimonial = ({
 							className='tiles-item reveal-from-left'
 							data-reveal-delay='200'>
 							<div className='tiles-item-inner'>
-								<p className='testimonial-title'>2% to Cause</p>
+								<p className='testimonial-title'>6% to Cause</p>
 								<div className='testimonial-item-content'>
 									<p className='text-sm mb-0'>
 										The main purpose of this project is to fund Life Drops. The
@@ -108,7 +108,7 @@ const Testimonial = ({
 							className='tiles-item reveal-from-right'
 							data-reveal-delay='200'>
 							<div className='tiles-item-inner'>
-								<p className='testimonial-title'>The other 94%?</p>
+								<p className='testimonial-title'>The other 90%?</p>
 								<div className='testimonial-item-content'>
 									<p className='text-sm mb-0'>
 										To you of course! When you sell your Diadragon you keep the
