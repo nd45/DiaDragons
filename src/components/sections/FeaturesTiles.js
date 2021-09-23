@@ -51,7 +51,7 @@ const FeaturesTiles = ({
 	const sectionHeader = {
 		title: "Milestones",
 		paragraph:
-			"As we meet the following milestones for our launch, we will release new updates on each of the corresponding goals! Each milestone refers to the percentage of total NFTs sold (out of 10,000).",
+			"As we meet the following milestones for our launch, we will release new updates on each of the corresponding goals! Each milestone refers to the percentage of total NFTs sold (out of 11,111).",
 	};
 
 	return (
@@ -101,7 +101,7 @@ const FeaturesTiles = ({
 									<h4 className='mt-0 mb-8'>25% sold</h4>
 									<p className='m-0 text-sm'>
 										Discover the hidden meaning and metaphors behind the
-										Diadragon backstory video on our Youtube channel
+										Diadragon backstory video on our Youtube channel.
 									</p>
 								</div>
 							</div>
