@@ -16,7 +16,7 @@ const contractAddress = "0x1F9E51199D587190120C8180D0Ce0B9bd61D0229";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
-//window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
+window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
 
 const propTypes = {
 	...SectionProps.types,
