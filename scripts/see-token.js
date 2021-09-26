@@ -6,10 +6,10 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(REACT_APP_ALCHEMY_KEY);
 
-// const contract = require("./build/contracts/DiaDragons.json"); // for Truffle 
-const contract = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
+// const contract = require("./build/contracts/Diadragons.json"); // for Truffle 
+const contract = require("../artifacts/contracts/Diadragons.sol/Diadragons.json");
 const contractAddress = process.env.CONTRACT_ADDRESS;
-const DiaDragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
+const DiadragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function main() {
     const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, 'latest'); // get latest nonce
@@ -22,10 +22,10 @@ async function main() {
     //   'nonce': nonce,
     //   'gas': 5000000, 
     //   'maxFeePerGas': 1000000108,
-    //   'data': DiaDragonsContract._baseURI.
+    //   'data': DiadragonsContract._baseURI.
     // };
 
-    const test = await DiaDragonsContract._baseURIExtended
+    const test = await DiadragonsContract._baseURIExtended
     console.log(test)
     // // Sign the transaction
     // const signPromise = web3.eth.accounts.signTransaction(tx, PRIVATE_KEY);

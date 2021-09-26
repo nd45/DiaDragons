@@ -1,7 +1,7 @@
 // import { pinJSONToIPFS } from "./pinata.js";
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
-const contractABI = require("../artifacts/contracts/DiaDragons.sol/DiaDragons.json");
+const contractABI = require("../artifacts/contracts/Diadragons.sol/Diadragons.json");
 const contractAddress = "0xd832B8eED0E5B8f124eCa1Cc2dFe2e5dCf60746d";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
@@ -115,7 +115,7 @@ export const mintNFT = async () => {
 			value: web3.utils.numberToHex(
 				web3.utils.toWei((0.07).toString(), "ether")
 			),
-			data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
+			data: window.contract.methods.mintDiadragonTier1().encodeABI(),
 		};
 
 		try {

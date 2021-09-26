@@ -1,8 +1,48 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1630813414299,
+    "/Users/meghansharkus/Documents/Diadragons/contracts/Diadragons.sol": {
+      "lastModificationDate": 1632612508749,
+      "contentHash": "22dd5cdc0e9ef9486a3e8a0c99a2c560",
+      "sourceName": "contracts/Diadragons.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Diadragons"
+      ]
+    },
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1632531705934,
       "contentHash": "4fe56b59ced59d87df6b796758f62895",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -37,8 +77,8 @@
         "Ownable"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1630813414201,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "a4f6dccf3f15b6844e357f737a572388",
       "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
@@ -79,8 +119,8 @@
         "ERC721"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
-      "lastModificationDate": 1630813414203,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "55752434e41be58192ecbaa3beb4b7cc",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
       "solcConfig": {
@@ -116,8 +156,8 @@
         "ERC721Enumerable"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
-      "lastModificationDate": 1630813414318,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
+      "lastModificationDate": 1632531705972,
       "contentHash": "5365090efc586b728719e562ebfed0d6",
       "sourceName": "@openzeppelin/contracts/utils/math/SafeMath.sol",
       "solcConfig": {
@@ -150,8 +190,8 @@
         "SafeMath"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1630811978074,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1632531709653,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -184,8 +224,8 @@
         "console"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1630813414170,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1632531705968,
       "contentHash": "851485d5b925529b1a2f34a0be077891",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -218,8 +258,8 @@
         "Context"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1630813414271,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "53919d6975f2c0f3dffee5e3a1064116",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
@@ -254,8 +294,8 @@
         "IERC721"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1630813414284,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "9a367cecca6fed80a3e975b7e6b3bd5c",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
@@ -288,8 +328,8 @@
         "IERC721Receiver"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1630813414283,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1632531705967,
       "contentHash": "8aa69ca8424167555baaaa9f607801db",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
       "solcConfig": {
@@ -324,8 +364,8 @@
         "IERC721Metadata"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1630813414167,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1632531705968,
       "contentHash": "c5f6c4e4df069c789e7d84b4c3011913",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
@@ -358,8 +398,8 @@
         "Address"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1630813414320,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1632531705969,
       "contentHash": "62142442bed149f965c5ed971fae4182",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -392,8 +432,8 @@
         "Strings"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1630813414185,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1632531705971,
       "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
@@ -428,8 +468,8 @@
         "ERC165"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1630813414234,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1632531705971,
       "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
@@ -462,8 +502,8 @@
         "IERC165"
       ]
     },
-    "/Users/nickdellorco/nft-minter-tutorial/nft-minter/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
-      "lastModificationDate": 1630813414276,
+    "/Users/meghansharkus/Documents/Diadragons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
+      "lastModificationDate": 1632531705967,
       "contentHash": "e57b2ff1645fb57408d6f87ee861dcb6",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
       "solcConfig": {
@@ -498,10 +538,10 @@
         "IERC721Enumerable"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/contracts/DiaDragons.sol": {
-      "lastModificationDate": 1631774983299,
-      "contentHash": "cdcc26b967967311723970603477cac2",
-      "sourceName": "contracts/DiaDragons.sol",
+    "/Users/meghansharkus/Documents/DiaDragons/contracts/Diadragons.sol": {
+      "lastModificationDate": 1632614759785,
+      "contentHash": "22dd5cdc0e9ef9486a3e8a0c99a2c560",
+      "sourceName": "contracts/Diadragons.sol",
       "solcConfig": {
         "version": "0.8.0",
         "settings": {
@@ -535,11 +575,11 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "DiaDragons"
+        "Diadragons"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1631601753841,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1632531705934,
       "contentHash": "4fe56b59ced59d87df6b796758f62895",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -574,8 +614,8 @@
         "Ownable"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1631601753918,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "a4f6dccf3f15b6844e357f737a572388",
       "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
@@ -616,8 +656,8 @@
         "ERC721"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
-      "lastModificationDate": 1631601753919,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "55752434e41be58192ecbaa3beb4b7cc",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
       "solcConfig": {
@@ -653,8 +693,8 @@
         "ERC721Enumerable"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
-      "lastModificationDate": 1631601753947,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
+      "lastModificationDate": 1632531705972,
       "contentHash": "5365090efc586b728719e562ebfed0d6",
       "sourceName": "@openzeppelin/contracts/utils/math/SafeMath.sol",
       "solcConfig": {
@@ -687,8 +727,8 @@
         "SafeMath"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1631601767417,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1632531709653,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -721,8 +761,8 @@
         "console"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1631601753934,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1632531705968,
       "contentHash": "851485d5b925529b1a2f34a0be077891",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -755,8 +795,8 @@
         "Context"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1631601753918,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "53919d6975f2c0f3dffee5e3a1064116",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
@@ -791,8 +831,8 @@
         "IERC721"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1631601753918,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1632531705966,
       "contentHash": "9a367cecca6fed80a3e975b7e6b3bd5c",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
@@ -825,8 +865,8 @@
         "IERC721Receiver"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1631601753919,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1632531705967,
       "contentHash": "8aa69ca8424167555baaaa9f607801db",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
       "solcConfig": {
@@ -861,8 +901,8 @@
         "IERC721Metadata"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1631601753933,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1632531705968,
       "contentHash": "c5f6c4e4df069c789e7d84b4c3011913",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
@@ -895,8 +935,8 @@
         "Address"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1631601753936,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1632531705969,
       "contentHash": "62142442bed149f965c5ed971fae4182",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -929,8 +969,8 @@
         "Strings"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1631601753944,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1632531705971,
       "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
@@ -965,8 +1005,8 @@
         "ERC165"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1631601753945,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1632531705971,
       "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
@@ -999,8 +1039,8 @@
         "IERC165"
       ]
     },
-    "/Users/nickdellorco/Desktop/DiaDagons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
-      "lastModificationDate": 1631601753919,
+    "/Users/meghansharkus/Documents/DiaDragons/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
+      "lastModificationDate": 1632531705967,
       "contentHash": "e57b2ff1645fb57408d6f87ee861dcb6",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
       "solcConfig": {

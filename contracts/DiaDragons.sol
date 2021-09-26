@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "hardhat/console.sol";
 
-contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
+contract Diadragons is ERC721, ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Strings for uint256;
 
@@ -18,9 +18,9 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     uint256 public revealTimeStamp = block.timestamp + (86400 * 7);
 
     // Constants
-    uint256 public constant TIER1_PRICE = .070 ether;
-    uint256 public constant TIER1_NUM_TOKENS = 1;
-    uint256 public constant MAX_SUPPLY = 10;
+    uint256 public constant PRICE = .080 ether;
+    uint256 public constant NUM_TOKENS = 1;
+    uint256 public constant MAX_SUPPLY = 11111;
     string public DIADRAGONS_PROVENANCE = "";
 
     string public baseURI;
@@ -30,7 +30,7 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
     event SaleStopped();
     event TokenMinted(uint256 supply);
 
-    constructor() ERC721("DiaDragons", "DD") {}
+    constructor() ERC721("Diadragons", "DD") {}
 
     function startSale() public onlyOwner {
         _isSaleActive = true;
@@ -55,7 +55,7 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
         return totalSupply();
     }
 
-    function getDiaDragonsByOwner(address _owner)
+    function getDiadragonsByOwner(address _owner)
         public
         view
         returns (uint256[] memory)
@@ -69,38 +69,38 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
         return tokenIds;
     }
 
-    function mintDiaDragonTier1() public payable {
-        require(_isSaleActive, "Sale must be active to mint DiaDragons");
+    function mintDiadragon() public payable {
+        require(_isSaleActive, "Sale must be active to mint Diadragons");
         require(
-            totalSupply().add(TIER1_NUM_TOKENS) <= MAX_SUPPLY,
+            totalSupply().add(NUM_TOKENS) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        require(TIER1_PRICE <= msg.value, "Not enough ether sent (<0.07 ETH)");
-        _mintDiaDragons(TIER1_NUM_TOKENS, msg.sender);
+        require(PRICE <= msg.value, "Not enough ether sent (<.08 ETH)");
+        _mintDiadragons(NUM_TOKENS, msg.sender);
         emit TokenMinted(totalSupply());
     }
 
-    function reserveDiaDragons(uint256 numDiaDragons) public onlyOwner {
+    function reserveDiadragons(uint256 numDiadragons) public onlyOwner {
         require(
-            totalSupply().add(numDiaDragons) <= MAX_SUPPLY,
+            totalSupply().add(numDiadragons) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        _mintDiaDragons(numDiaDragons, msg.sender);
+        _mintDiadragons(numDiadragons, msg.sender);
     }
 
-    function airdropDiaDragon(uint256 numDiaDragons, address recipient)
+    function airdropDiadragon(uint256 numDiadragons, address recipient)
         public
         onlyOwner
     {
         require(
-            totalSupply().add(numDiaDragons) <= MAX_SUPPLY,
+            totalSupply().add(numDiadragons) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        _mintDiaDragons(numDiaDragons, recipient);
+        _mintDiadragons(numDiadragons, recipient);
         emit TokenMinted(totalSupply());
     }
 
-    function airdropDiaDragonToMany(address[] memory recipients)
+    function airdropDiadragonToMany(address[] memory recipients)
         external
         onlyOwner
     {
@@ -109,15 +109,15 @@ contract DiaDragons is ERC721, ERC721Enumerable, Ownable {
             "Sale would exceed max supply"
         );
         for (uint256 i = 0; i < recipients.length; i++) {
-            airdropDiaDragon(1, recipients[i]);
+            airdropDiadragon(1, recipients[i]);
         }
     }
 
-    function _mintDiaDragons(uint256 numDiaDragons, address recipient)
+    function _mintDiadragons(uint256 numDiadragons, address recipient)
         internal
     {
         uint256 supply = totalSupply();
-        for (uint256 i = 0; i < numDiaDragons; i++) {
+        for (uint256 i = 0; i < numDiadragons; i++) {
             _safeMint(recipient, supply + i);
         }
 
