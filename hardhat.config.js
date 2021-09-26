@@ -10,9 +10,9 @@ const { REACT_APP_ALCHEMY_KEY, PRIVATE_KEY } = process.env;
 
 module.exports = {
   solidity: "0.8.0",
-  defaultNetwork: "rinkeby",
+  defaultNetwork: "mainnet",
   networks: {
-      rinkeby: {
+    mainnet: {
          url: REACT_APP_ALCHEMY_KEY,
          accounts: [`0x${PRIVATE_KEY}`]
       }
