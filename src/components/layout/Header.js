@@ -96,7 +96,7 @@ const Header = ({
 					closeMenu();
 				};
 			}
-			connectWalletPressed();
+			getCurrentWalletConnected();
 			return fetchData();
 		} catch (error) {}
 	}, []);

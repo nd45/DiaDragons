@@ -3,15 +3,12 @@ import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
-import Image from "../elements/Image";
-import Modal from "../elements/Modal";
-import placeholder from "./../../assets/images/video-placeholder.jpg";
 import { mintNFT } from "../../util/interact.js";
-import Countdown, { zeroPad } from "react-countdown";
+import Countdown from "react-countdown";
 import egg from "./../../assets/images/egg.gif";
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
-const contractABI = require("../../artifacts/contracts/Diadragons.sol/Diadragons.json");
+const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
 const contractAddress = "0x1F9E51199D587190120C8180D0Ce0B9bd61D0229";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
@@ -154,7 +151,7 @@ const Hero = ({
 			</div>
 			<div className='{innerClasses}'>
 				<iframe
-					width='560'
+					width='70%'
 					height='315'
 					src='https://www.youtube.com/embed/0L68m7e7_9w'
 					title='YouTube video player'
