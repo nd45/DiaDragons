@@ -7,6 +7,7 @@ import image1 from "./../../assets/images/meet1.jpeg";
 import image2 from "./../../assets/images/meet2.jpeg";
 import image3 from "./../../assets/images/meet3.jpeg";
 import image4 from "./../../assets/images/meet4.jpeg";
+import image5 from "./../../assets/images/meet5.jpeg";
 import styles from "./../../App.css";
 
 const propTypes = {
@@ -131,6 +132,23 @@ const MeetTheTeam = ({
 								</div>
 								<div className='features-tiles-item-content'>
 									<h4 className='mt-0 mb-8'>Nick</h4>
+								</div>
+							</div>
+						</div>
+						<div className='tiles-item reveal-from-bottom'>
+							<div className='tiles-item-inner'>
+								<div className='features-tiles-item-header'>
+									<div className='features-tiles-item-image mb-16'>
+										<Image
+											src={image5}
+											alt='Features tile icon 05'
+											width={160}
+											height={160}
+										/>
+									</div>
+								</div>
+								<div className='features-tiles-item-content'>
+									<h4 className='mt-0 mb-8'>Emma</h4>
 								</div>
 							</div>
 						</div>
