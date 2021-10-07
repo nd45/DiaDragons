@@ -8,7 +8,9 @@ const Logo = ({ className, ...props }) => {
 
 	return (
 		<div {...props} className={classes}>
-			<Image src={logo} alt='Open' width={200} height={32} />
+			<a href='/'>
+				<Image src={logo} alt='Open' width={200} height={32} />
+			</a>
 		</div>
 	);
 };

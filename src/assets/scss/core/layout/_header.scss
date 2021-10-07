@@ -150,6 +150,13 @@
 			}
 		}
 	}
+	.faqs {
+		+ .site-content {
+			.section:first-of-type {
+				padding-top: $header-height__desktop;
+			}
+		}
+	}
 
 	.site-header-inner {
 		height: $header-height__desktop;
