@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
-import ButtonGroup from "../elements/ButtonGroup";
-import Button from "../elements/Button";
 import { mintNFT } from "../../util/interact.js";
 import Countdown from "react-countdown";
 import egg from "./../../assets/images/egg.gif";
@@ -23,14 +21,6 @@ const defaultProps = {
 	...SectionProps.defaults,
 };
 
-let totalSupply = async () => {
-	window.contract = await new web3.eth.Contract(
-		contractABI.abi,
-		contractAddress
-	);
-
-	window.contract.methods.gettotalSupply().encodeABI();
-};
 
 const Hero = ({
 	className,
@@ -45,44 +35,9 @@ const Hero = ({
 	const [videoModalActive, setVideomodalactive] = useState(false);
 	const [status, setStatus] = useState("");
 
-	const onMintPressed = async () => {
-		const { status } = await mintNFT();
-		setStatus(status);
-	};
-
-	const openModal = (e) => {
-		e.preventDefault();
-		setVideomodalactive(true);
-	};
-
-	const closeModal = (e) => {
-		e.preventDefault();
-		setVideomodalactive(false);
-	};
-
-	const Completionist = () => {
-		return (
-			<div>
-				<p></p>
-				<ButtonGroup>
-					<Button
-						tag='a'
-						color='primary'
-						wideMobile
-						id='mintButton'
-						onClick={onMintPressed}>
-						Mint Diadragon
-					</Button>
-				</ButtonGroup>
-				<p id='status' style={{ color: "red" }}>
-					{status}
-				</p>
-			</div>
-		);
-	};
 
 	// Renderer callback with condition
-	const renderer = ({ days, hours, minutes, seconds, completed }) => {
+	const renderer = ({ completed }) => {
 		if (completed) {
 			// Render a completed state
 			return (
