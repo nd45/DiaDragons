@@ -5,6 +5,7 @@ import FeaturesTiles from "../components/sections/FeaturesTiles";
 import FeaturesSplit from "../components/sections/FeaturesSplit";
 import Testimonial from "../components/sections/Testimonial";
 import MeetTheTeam from "../components/sections/MeetTheTeam";
+import Timeline from "./Timeline";
 
 const Home = () => {
 	return (
@@ -16,8 +17,8 @@ const Home = () => {
 				imageFill
 				className='illustration-section-02'
 			/>
-			<FeaturesTiles />
-
+			{/* <FeaturesTiles /> */}
+			<Timeline />
 			<Testimonial topDivider />
 			<MeetTheTeam />
 		</>
