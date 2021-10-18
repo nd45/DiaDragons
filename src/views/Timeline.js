@@ -15,13 +15,34 @@ const Timeline = () => {
 				iconStyle={{ background: "#23ccfa", color: "#fff" }}
 				// icon={<WorkIcon />}
 			>
+				<h3 className='vertical-timeline-element-title'>
+					Completed Milestones
+				</h3>
+				{/* <h4 className='vertical-timeline-element-subtitle'>Miami, FL</h4> */}
+				<p>
+					⚬ Diadragons Backstory Animation revealed <br />
+				</p>
+			</VerticalTimelineElement>
+			<VerticalTimelineElement
+				className='vertical-timeline-element--work'
+				contentStyle={{ background: "#242526", color: "#fff" }}
+				contentArrowStyle={{ borderRight: "7px solid  #fff" }}
+				// date='2011 - present'
+				iconStyle={{ background: "#23ccfa", color: "#fff" }}
+				// icon={<WorkIcon />}
+			>
 				<h3 className='vertical-timeline-element-title'>Prelaunch</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Miami, FL</h4> */}
 				<p>
 					⚬ Daily Challenges to win a Free-Diadragon! <br />
-					⚬ 5-question-Fridays on Kahoot! Winner gets a Diadragon! <br />
-					⚬ Weekly townhalls <br />⚬ Pre-launch merch! (whaaaat?! Learn more by
-					inviting 10 friends!)
+					⚬ Weekly townhalls & kahoot challenges: <br />
+					&emsp;• Get updates from the team and chat with us about the project!
+					<br />
+					⚬ Weekly townhalls
+					<br /> ⚬ Pre-launch merch!
+					<br />
+					&emsp;• Deets announced soon! Invite 10 friends to the discord to get
+					access to the hidden chat!
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -38,9 +59,9 @@ const Timeline = () => {
 					San Francisco, CA
 				</h4> */}
 				<p>
-					⚬ If you invite 10 friends and answer a question you will have access
+					{/* ⚬ If you invite 10 friends and answer a question you will have access
 					to our pre-launch! This is the best way to get a diadragon (or two)
-					with low gas fees!
+					with low gas fees! */}
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -57,24 +78,6 @@ const Timeline = () => {
 				{/* <p>User Experience, Visual Design</p> */}
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
-				className='vertical-timeline-element--work'
-				contentStyle={{ background: "#242526", color: "#fff" }}
-				// date='2006 - 2008'
-				iconStyle={{ background: "#23ccfa", color: "#fff" }}
-				// icon={<WorkIcon />}
-			>
-				<h3 className='vertical-timeline-element-title'>
-					Reveal day: November 1st!{" "}
-				</h3>
-				{/* <h4 className='vertical-timeline-element-subtitle'>
-					San Francisco, CA
-				</h4> */}
-				<p>
-					⚬ Will you get a rare diadragon???
-					<br />⚬ Got any games? Earn Your Wings Challenge Announcement
-				</p>
-			</VerticalTimelineElement>
-			<VerticalTimelineElement
 				className='vertical-timeline-element--education'
 				contentStyle={{ background: "#242526", color: "#fff" }}
 				// date='April 2013'
@@ -86,15 +89,28 @@ const Timeline = () => {
 				</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Online Course</h4> */}
 				<p>
-					⚬ Make it rain Life Drops begin
+					⚬ Got any games?
 					<br />
-					⚬ Twitter takeover Change your PFP to gain access to new diadragon
-					banners, memes, and animations. Art contests, theme song contest
+					&emsp;• Earn Your Wings Challenge Announcement. <br />
+					⚬ Make it rain
 					<br />
-					⚬ Ready for our close up Diadragons hits the press
-					<br />⚬ Health Focused Weekly Giveaways Nutrisense, Levels, Cooking
-					Lessons, Personal Trainers, Scuba Certification, Castle Tour Vacation,
-					and more!
+					&emsp;• Life Drops begin. <br />
+					⚬ Twitter takeover
+					<br />
+					&emsp;• Change your PFP to gain access to new Diadragon banners,
+					memes, and animations. <br />
+					&emsp;• Art contests, theme song contest. <br />
+					⚬ Ready for our close up
+					<br />
+					&emsp;• Diadragons hits the press. Diadragons will be featured in
+					ExpressionMed’s annual Diabetes Awareness month partnerships and
+					influencer promotions. <br />
+					⚬ Health Focused Weekly Giveaways
+					<br />
+					&emsp;• Nutrisense, Levels, Cooking Lessons, Personal Trainers, Scuba
+					Certification, Castle Tour Vacation, and more! <br />
+					&emsp;• These giveaways will be based on which traits your Diadragon
+					has so make sure you collect a variety of traits! <br />{" "}
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -108,7 +124,7 @@ const Timeline = () => {
 				{/* <h4 className='vertical-timeline-element-subtitle'>Certification</h4> */}
 				<p>
 					⚬ Merch for Diadragon Holders
-					<br />⚬ Diadragons Cookbook: Metabolic Health Noms{" "}
+					<br />⚬ Diadragons Cookbook: Metabolic Health Noms iykyk
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -122,11 +138,11 @@ const Timeline = () => {
 				{/* <h4 className='vertical-timeline-element-subtitle'>Bachelor Degree</h4> */}
 				<p>
 					⚬ Product development for awareness (interactive merch!)
-					<br />⚬ I want to bulid a DAO with the initiative of filling the gaps
-					in medical expenses and laws that are not currently filled by
-					non-profits and insurance companies. Some people are not supported due
-					to government restrictions. Let’s decide together who needs our help
-					and what we can do about it{" "}
+					<br />⚬ DAO &emsp;• We want to build a DAO with the initiative of
+					filling the gaps in medical expenses and laws that are not currently
+					filled by non-profits and insurance companies. Some people are not
+					supported due to government restrictions. Let’s decide together who
+					needs our help and what we can do about it
 				</p>
 			</VerticalTimelineElement>
 		</VerticalTimeline>

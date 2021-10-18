@@ -6,7 +6,7 @@ const questions = [
 	},
 	{
 		id: 2,
-		title: "Reveal Type?",
+		title: "Reveal type?",
 		info: "Diadragons have a delayed reveal, which means if you buy on mint day, you will receive a dragon egg. This dragon egg will hatch into a random Diadragon. The beauty of this reveal type is that you have no idea how rare your diadragon will be. The rarest traits and most common traits will mint at the same price.",
 	},
 	{
