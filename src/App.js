@@ -9,6 +9,7 @@ import LayoutDefault from "./layouts/LayoutDefault";
 // Views
 import Home from "./views/Home";
 import FAQ from "./views/FAQ";
+import Cause from "./views/Cause";
 
 const App = () => {
 	const childRef = useRef();
@@ -27,6 +28,12 @@ const App = () => {
 				<Switch>
 					<AppRoute exact path='/' component={Home} layout={LayoutDefault} />
 					<AppRoute exact path='/faq' component={FAQ} layout={LayoutDefault} />
+					<AppRoute
+						exact
+						path='/cause'
+						component={Cause}
+						layout={LayoutDefault}
+					/>
 				</Switch>
 			)}
 		/>

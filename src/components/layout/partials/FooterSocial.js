@@ -37,7 +37,10 @@ const FooterSocial = ({ className, ...props }) => {
 						fill='white'
 					/>
 				</a>
-				<li style={{ marginRight: "20px" }}>
+				<li>
+					<Link to='/cause'>Cause</Link>
+				</li>
+				<li>
 					<Link to='/faq'>FAQ</Link>
 				</li>
 			</ul>

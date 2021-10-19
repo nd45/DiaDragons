@@ -34,7 +34,7 @@ const Timeline = () => {
 				<h3 className='vertical-timeline-element-title'>Prelaunch</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Miami, FL</h4> */}
 				<p>
-					⚬ Daily Challenges to win a Free-Diadragon! <br />
+					⚬ Daily challenges to win a Free-Diadragon! <br />
 					⚬ Weekly townhalls & kahoot challenges: <br />
 					&emsp;• Get updates from the team and chat with us about the project!
 					<br />
@@ -138,11 +138,12 @@ const Timeline = () => {
 				{/* <h4 className='vertical-timeline-element-subtitle'>Bachelor Degree</h4> */}
 				<p>
 					⚬ Product development for awareness (interactive merch!)
-					<br />⚬ DAO &emsp;• We want to build a DAO with the initiative of
-					filling the gaps in medical expenses and laws that are not currently
-					filled by non-profits and insurance companies. Some people are not
-					supported due to government restrictions. Let’s decide together who
-					needs our help and what we can do about it
+					<br />⚬ DAO <br />
+					&emsp;• We want to build a DAO with the initiative of filling the gaps
+					in medical expenses and laws that are not currently filled by
+					non-profits and insurance companies. Some people are not supported due
+					to government restrictions. Let’s decide together who needs our help
+					and what we can do about it
 				</p>
 			</VerticalTimelineElement>
 		</VerticalTimeline>
