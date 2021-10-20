@@ -55,6 +55,7 @@ const CauseHero = ({
 					{/* <Completionist /> */}
 					<div className='{innerClasses}'>
 						<iframe
+							width='70%'
 							width='560'
 							height='315'
 							src='https://www.youtube.com/embed/0L68m7e7_9w'
@@ -69,6 +70,7 @@ const CauseHero = ({
 					</p>
 					<div className='{innerClasses} mt-16'>
 						<iframe
+							width='70%'
 							width='560'
 							height='315'
 							src='https://www.youtube.com/embed/vz4-NDarUaE'
