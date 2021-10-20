@@ -120,16 +120,6 @@ const CauseHero = ({
 					</div>
 				</div>
 			</div>
-			<div className='{innerClasses}'>
-				<iframe
-					width='70%'
-					height='315'
-					src='https://www.youtube.com/embed/0L68m7e7_9w'
-					title='YouTube video player'
-					frameborder='0'
-					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-					allowfullscreen></iframe>
-			</div>
 		</section>
 	);
 };
