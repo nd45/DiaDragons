@@ -117,6 +117,19 @@ const Testimonial = ({
 								</div>
 							</div>
 						</div>
+						<div
+							className='tiles-item reveal-from-right'
+							data-reveal-delay='200'>
+							<div className='tiles-item-inner'>
+								<p className='testimonial-title'>Initial mint</p>
+								<div className='testimonial-item-content'>
+									<p className='text-sm mb-0'>
+										The initial mint will be split 3 ways: 1/3 to Life Drops,
+										1/3 to the community and 1/3 for project costs and marketing
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

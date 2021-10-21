@@ -21,7 +21,6 @@ const defaultProps = {
 	...SectionProps.defaults,
 };
 
-
 const Hero = ({
 	className,
 	topOuterDivider,
@@ -35,10 +34,9 @@ const Hero = ({
 	const [videoModalActive, setVideomodalactive] = useState(false);
 	const [status, setStatus] = useState("");
 
-
 	// Renderer callback with condition
 	const renderer = ({ completed }) => {
-		if (completed) {
+		if (!completed) {
 			// Render a completed state
 			return (
 				<div>
