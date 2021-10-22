@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
+import ButtonGroup from "../elements/ButtonGroup";
+import Button from "../elements/Button";
 import { mintNFT } from "../../util/interact.js";
 import Countdown from "react-countdown";
 import egg from "./../../assets/images/egg.gif";
@@ -34,9 +36,32 @@ const Hero = ({
 	const [videoModalActive, setVideomodalactive] = useState(false);
 	const [status, setStatus] = useState("");
 
+	const onMintPressed = async () => {
+		const { status } = await mintNFT();
+		setStatus(status);
+	};
+	const Completionist = () => {
+		return (
+			<div>
+				<ButtonGroup>
+					<Button
+						tag='a'
+						color='primary'
+						wideMobile
+						id='mintButton'
+						onClick={onMintPressed}>
+						Mint DiaDragon
+					</Button>
+				</ButtonGroup>
+				<p id='status' style={{ color: "red" }}>
+					{status}
+				</p>
+			</div>
+		);
+	};
 	// Renderer callback with condition
 	const renderer = ({ completed }) => {
-		if (!completed) {
+		if (completed) {
 			// Render a completed state
 			return (
 				<div>
@@ -47,7 +72,7 @@ const Hero = ({
 						Join our Discord to be one of the first to mint a Diadragon!
 					</p>
 					<img src={egg} alt='loading...' width={256} height={256} />
-					{/* <Completionist /> */}
+					{<Completionist />}
 				</div>
 			);
 		} else {

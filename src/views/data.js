@@ -22,7 +22,7 @@ const questions = [
 	{
 		id: 5,
 		title: "How much will it cost to mint?",
-		info: "Each Diadragon will be minted for 0.08 Eth + Gas on October 30th at TBD. You can earn early access and bulk discounts through our discord channel.",
+		info: "Each Diadragon will be minted for 0.05 Eth + Gas on October 30th at TBD. You can earn early access and bulk discounts through our discord channel.",
 	},
 	{
 		id: 6,
