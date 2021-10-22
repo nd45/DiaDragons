@@ -72,7 +72,7 @@ const Hero = ({
 						Join our Discord to be one of the first to mint a Diadragon!
 					</p>
 					<img src={egg} alt='loading...' width={256} height={256} />
-					{<Completionist />}
+					{/* {<Completionist />} */}
 				</div>
 			);
 		} else {
