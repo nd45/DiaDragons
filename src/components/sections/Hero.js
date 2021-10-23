@@ -4,8 +4,8 @@ import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import { mintNFT } from "../../util/interact.js";
-import Countdown from "react-countdown";
 import egg from "./../../assets/images/egg.gif";
+import Countdown, { zeroPad } from "react-countdown";
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
@@ -60,14 +60,18 @@ const Hero = ({
 		);
 	};
 	// Renderer callback with condition
-	const renderer = ({ completed }) => {
-		if (completed) {
+	const renderer = ({ days, hours, minutes, seconds, completed }) => {
+		if (!completed) {
 			// Render a completed state
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
 						Coming soon
 					</h1>
+					<h2 style={{ color: "#23ccfa" }}>
+						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
+						{zeroPad(seconds)}
+					</h2>
 					<p className='m-0 mb-16'>
 						Join our Discord to be one of the first to mint a Diadragon!
 					</p>
@@ -118,8 +122,9 @@ const Hero = ({
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown
 								date={
-									//Date.now() +
-									Date.UTC(2021, 8, 21, 12, 12, 0, 0).valueOf() - Date.now()
+									Date.now() +
+									Date.UTC(2021, 9, 30, 18, 0, 0, 0).valueOf() -
+									Date.now()
 								}
 								renderer={renderer}
 							/>
