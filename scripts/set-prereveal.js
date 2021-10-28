@@ -8,14 +8,12 @@ const web3 = createAlchemyWeb3(REACT_APP_ALCHEMY_KEY);
 
 // const contract = require("./build/contracts/Diadragons.json"); // for Truffle
 const contract = require("../artifacts/contracts/Diadragons.sol/Diadragons.json");
-const contractAddress = "0xf9d13d83534051f2e70c65809a765c6cd0153df1";
+const contractAddress = "0x0FD6BaEE3d4e278F05D156C2d888B87fBaB2485E";
 const DiadragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function main() {
 	const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, "latest"); // get latest nonce
-	const gasEstimate = await DiadragonsContract.methods.setPreRevealURI(
-		"https://gateway.pinata.cloud/ipfs/QmPBhT33ZzCfpeGtzU14VSafsqZir8XRfrpLwLCyLFHfvu"
-	).estimateGas(); // estimate gas
+	const gasEstimate = await web3.eth.estimateGas; // estimate gas
 
 	// Create the transaction
 	const tx = {
@@ -26,7 +24,7 @@ async function main() {
 		maxFeePerGas: 1000000108,
 		data: DiadragonsContract.methods
 			.setPreRevealURI(
-				"https://gateway.pinata.cloud/ipfs/QmPBhT33ZzCfpeGtzU14VSafsqZir8XRfrpLwLCyLFHfvu"
+				"https://gateway.pinata.cloud/ipfs/QmUyZaijiycvpme6Y4WAT4HH3cpNgUH4aLHH86atCrP549"
 			)
 			.encodeABI(),
 	};

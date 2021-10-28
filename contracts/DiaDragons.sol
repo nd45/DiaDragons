@@ -13,13 +13,22 @@ contract Diadragons is ERC721, ERC721Enumerable, Ownable {
     using Strings for uint256;
 
     bool public _isSaleActive = false;
+    bool public _isPresaleActive = true;
     uint256 public offsetIndex = 0;
     uint256 public offsetIndexBlock = 0;
     uint256 public revealTimeStamp = block.timestamp + (86400 * 7);
 
     // Constants
-    uint256 public constant PRICE = .080 ether;
-    uint256 public constant NUM_TOKENS = 1;
+    uint256 public constant TIER1_PRICE = .050 ether;
+    uint256 public constant TIER2_PRICE = .046 ether;
+    uint256 public constant TIER3_PRICE = .040 ether;
+    uint256 public constant TIER4_PRICE = .035 ether;
+
+    uint256 public constant TIER1_NUM_TOKENS = 1;
+    uint256 public constant TIER2_NUM_TOKENS = 5;
+    uint256 public constant TIER3_NUM_TOKENS = 10;
+    uint256 public constant TIER4_NUM_TOKENS = 50;
+
     uint256 public constant MAX_SUPPLY = 11111;
     string public DIADRAGONS_PROVENANCE = "";
 
@@ -28,9 +37,13 @@ contract Diadragons is ERC721, ERC721Enumerable, Ownable {
 
     event SaleStarted();
     event SaleStopped();
+    event PresaleStarted();
+    event PresaleStopped();
     event TokenMinted(uint256 supply);
 
-    constructor() ERC721("Diadragons", "DD") {}
+    constructor() ERC721("DiaDragons", "DD") {
+        _preRevealURI = "https://gateway.pinata.cloud/ipfs/QmNhiRP2ZtQpfmn4HCF87XeCcot5DHoxKqKZBJTuYntuKA";
+    }
 
     function startSale() public onlyOwner {
         _isSaleActive = true;
@@ -44,6 +57,20 @@ contract Diadragons is ERC721, ERC721Enumerable, Ownable {
 
     function isSaleActive() public view returns (bool) {
         return _isSaleActive;
+    }
+
+    function startPresale() public onlyOwner {
+        _isPresaleActive = true;
+        emit PresaleStarted();
+    }
+
+    function pausePresale() public onlyOwner {
+        _isPresaleActive = false;
+        emit PresaleStopped();
+    }
+
+    function isPresaleActive() public view returns (bool) {
+        return _isPresaleActive;
     }
 
     function withdraw() public onlyOwner {
@@ -69,14 +96,70 @@ contract Diadragons is ERC721, ERC721Enumerable, Ownable {
         return tokenIds;
     }
 
-    function mintDiadragon() public payable {
+    function mintDiadragons(uint256 numDiadragons) public payable {
         require(_isSaleActive, "Sale must be active to mint Diadragons");
         require(
-            totalSupply().add(NUM_TOKENS) <= MAX_SUPPLY,
+            totalSupply().add(numDiadragons) <= MAX_SUPPLY,
             "Sale would exceed max supply"
         );
-        require(PRICE <= msg.value, "Not enough ether sent (<.08 ETH)");
-        _mintDiadragons(NUM_TOKENS, msg.sender);
+        require(
+            TIER1_PRICE.mul(numDiadragons) <= msg.value,
+            "Not enough ether sent (<.05 ETH per DiaDragon)"
+        );
+        _mintDiadragons(numDiadragons, msg.sender);
+        emit TokenMinted(totalSupply());
+    }
+
+    function mintDiaDragonTier1() public payable {
+        require(_isPresaleActive, "Sale must be active to mint DiaDragons");
+        require(
+            totalSupply().add(TIER1_NUM_TOKENS) <= MAX_SUPPLY,
+            "Sale would exceed max supply"
+        );
+        require(TIER1_PRICE <= msg.value, "Not enough ether sent (<0.05 ETH)");
+        _mintDiadragons(TIER1_NUM_TOKENS, msg.sender);
+        emit TokenMinted(totalSupply());
+    }
+
+    function mintDiaDragonTier2() public payable {
+        require(_isPresaleActive, "Sale must be active to mint DiaDragons");
+        require(
+            totalSupply().add(TIER2_NUM_TOKENS) <= MAX_SUPPLY,
+            "Sale would exceed max supply"
+        );
+        require(
+            TIER2_PRICE.mul(TIER2_NUM_TOKENS) <= msg.value,
+            "Not enough ether sent (<0.23 ETH)"
+        );
+        _mintDiadragons(TIER2_NUM_TOKENS, msg.sender);
+        emit TokenMinted(totalSupply());
+    }
+
+    function mintDiaDragonTier3() public payable {
+        require(_isPresaleActive, "Sale must be active to mint DiaDragons");
+        require(
+            totalSupply().add(TIER3_NUM_TOKENS) <= MAX_SUPPLY,
+            "Sale would exceed max supply"
+        );
+        require(
+            TIER3_PRICE.mul(TIER3_NUM_TOKENS) <= msg.value,
+            "Not enough ether sent (<0.4 ETH)"
+        );
+        _mintDiadragons(TIER3_NUM_TOKENS, msg.sender);
+        emit TokenMinted(totalSupply());
+    }
+
+    function mintDiaDragonTier4() public payable {
+        require(_isPresaleActive, "Sale must be active to mint DiaDragons");
+        require(
+            totalSupply().add(TIER4_NUM_TOKENS) <= MAX_SUPPLY,
+            "Sale would exceed max supply"
+        );
+        require(
+            TIER4_PRICE.mul(TIER4_NUM_TOKENS) <= msg.value,
+            "Not enough ether sent (<1.75 ETH)"
+        );
+        _mintDiadragons(TIER4_NUM_TOKENS, msg.sender);
         emit TokenMinted(totalSupply());
     }
 

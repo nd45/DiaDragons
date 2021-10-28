@@ -1,10 +1,15 @@
 async function main() {
-	const Diadragons = await ethers.getContractFactory("Diadragons");
+	const [deployer] = await ethers.getSigners();
 
-	// Start deployment, returning a promise that resolves to a contract object
-	const dragons = await Diaragons.deploy();
-	// https://gateway.pinata.cloud/ipfs/QmYnstK5FSEUUwndpWTTxEF1YSgPsRAJ2UWP9SAXFKSxhT/
-	console.log("Contract deployed to address:", dragons.address);
+	console.log("Deploying contracts with the account:", deployer.address);
+
+	console.log("Account balance:", (await deployer.getBalance()).toString());
+	console.log("Account balance:", deployer.address);
+
+	const Token = await ethers.getContractFactory("Diadragons");
+	const token = await Token.deploy();
+
+	console.log("Token address:", token.address);
 }
 
 main()

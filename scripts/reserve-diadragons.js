@@ -8,7 +8,7 @@ const web3 = createAlchemyWeb3(REACT_APP_ALCHEMY_KEY);
 
 // const contract = require("./build/contracts/Diadragons.json"); // for Truffle
 const contract = require("../artifacts/contracts/Diadragons.sol/Diadragons.json");
-const contractAddress = "0x14881056993d8C65c1712905C1860f6cccC4f9D2";
+const contractAddress = "0x63c72C1E3353c1DC247210C3Fba1B2e190B931E2";
 const DiadragonsContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function main() {

@@ -2,7 +2,7 @@
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../artifacts/contracts/DiaDragons.sol/Diadragons.json");
-const contractAddress = "0x98f61868687E5d1b678F64C6d7427AA8091A3CcA";
+const contractAddress = "0x0FD6BaEE3d4e278F05D156C2d888B87fBaB2485E";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
@@ -113,7 +113,7 @@ export const mintNFT = async () => {
 			to: contractAddress, // Required except during contract publications.
 			from: window.ethereum.selectedAddress, // must match user's active address.
 			value: web3.utils.numberToHex(
-				web3.utils.toWei((0.07).toString(), "ether")
+				web3.utils.toWei((0.05).toString(), "ether")
 			),
 			data: window.contract.methods.mintDiadragonTier1().encodeABI(),
 		};
