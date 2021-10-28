@@ -123,7 +123,7 @@ const Hero = ({
 							<Countdown
 								date={
 									Date.now() +
-									Date.UTC(2021, 9, 30, 18, 0, 0, 0).valueOf() -
+									Date.UTC(2021, 9, 30, 17, 0, 0, 0).valueOf() -
 									Date.now()
 								}
 								renderer={renderer}
