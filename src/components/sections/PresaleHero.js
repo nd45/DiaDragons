@@ -17,7 +17,7 @@ const options = [
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
-const contractAddress = "0xaB40ef3E586D3A2e9364D8072c7B264857eFad7e";
+const contractAddress = "0x9c7F6bE687a6EE6Bc1C2eF28f33493F75e54413F";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
@@ -70,11 +70,22 @@ const Hero = ({
 			contractAddress
 		);
 
+		let method = window.contract.methods.mintDiaDragonTier1();
+		if (amount === ".23") {
+			method = window.contract.methods.mintDiaDragonTier2();
+		} else if (amount === ".4") {
+			method = window.contract.methods.mintDiaDragonTier3();
+		} else if (amount === "1.75") {
+			method = window.contract.methods.mintDiaDragonTier4();
+		} else {
+			method = window.contract.methods.mintDiaDragonTier1();
+		}
+
 		const transactionParameters = {
 			to: contractAddress, // Required except during contract publications.
 			from: window.ethereum.selectedAddress, // must match user's active address.
-			value: web3.utils.numberToHex(web3.utils.toWei(".09", "ether")),
-			data: window.contract.methods.mintDiadragons(2).encodeABI(),
+			value: web3.utils.numberToHex(web3.utils.toWei(amount, "ether")),
+			data: method.encodeABI(),
 		};
 
 		try {

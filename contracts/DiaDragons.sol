@@ -41,9 +41,7 @@ contract Diadragons is ERC721, ERC721Enumerable, Ownable {
     event PresaleStopped();
     event TokenMinted(uint256 supply);
 
-    constructor() ERC721("DiaDragons", "DD") {
-        _preRevealURI = "https://gateway.pinata.cloud/ipfs/QmNhiRP2ZtQpfmn4HCF87XeCcot5DHoxKqKZBJTuYntuKA";
-    }
+    constructor() ERC721("DiaDragons", "DD") {}
 
     function startSale() public onlyOwner {
         _isSaleActive = true;
