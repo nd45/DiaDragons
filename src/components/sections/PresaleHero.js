@@ -71,11 +71,13 @@ const Hero = ({
 		);
 
 		let method = window.contract.methods.mintDiaDragonTier1();
-		if (amount === ".23") {
+		if (amount.toString() === "0.23") {
 			method = window.contract.methods.mintDiaDragonTier2();
-		} else if (amount === ".4") {
+		} else if (amount.toString() === "0.4") {
+			console.log("tier3");
+
 			method = window.contract.methods.mintDiaDragonTier3();
-		} else if (amount === "1.75") {
+		} else if (amount.toString() === "1.75") {
 			method = window.contract.methods.mintDiaDragonTier4();
 		} else {
 			method = window.contract.methods.mintDiaDragonTier1();
