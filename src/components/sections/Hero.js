@@ -71,12 +71,15 @@ const getTotal = async () => {
 			method: "eth_call",
 			params: [transactionParameters],
 		});
+		try {
+			const test = parseInt(Number(total), 10);
+		} catch (e) {}
 		return {
-			total: parseInt(Number(total), 10),
+			total: test,
 		};
 	} catch (error) {
 		return {
-			total: "😥 Something went wrong: " + error.message,
+			total: 0,
 		};
 	}
 };
