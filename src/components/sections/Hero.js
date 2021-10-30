@@ -30,15 +30,14 @@ const mintNFT = async (amount) => {
 			contractABI.abi,
 			contractAddress
 		);
-
-		const transactionParameters = {
-			to: contractAddress, // Required except during contract publications.
-			from: window.ethereum.selectedAddress, // must match user's active address.
-			value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
-			data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
-		};
-
 		try {
+			const transactionParameters = {
+				to: contractAddress, // Required except during contract publications.
+				from: window.ethereum.selectedAddress, // must match user's active address.
+				value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
+				data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
+			};
+
 			const txHash = await window.ethereum.request({
 				method: "eth_sendTransaction",
 				params: [transactionParameters],

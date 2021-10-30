@@ -65,48 +65,49 @@ const Hero = ({
 		setState(selectedOptions);
 	};
 	const mintNFT = async (amount) => {
-		window.contract = await new web3.eth.Contract(
-			contractABI.abi,
-			contractAddress
-		);
-
-		let method = window.contract.methods.mintDiaDragonTier1();
-		if (amount.toString() === "0.23") {
-			method = window.contract.methods.mintDiaDragonTier2();
-		} else if (amount.toString() === "0.4") {
-			console.log("tier3");
-
-			method = window.contract.methods.mintDiaDragonTier3();
-		} else if (amount.toString() === "1.75") {
-			method = window.contract.methods.mintDiaDragonTier4();
-		} else {
-			method = window.contract.methods.mintDiaDragonTier1();
-		}
-
-		const transactionParameters = {
-			to: contractAddress, // Required except during contract publications.
-			from: window.ethereum.selectedAddress, // must match user's active address.
-			value: web3.utils.numberToHex(web3.utils.toWei(amount, "ether")),
-			data: method.encodeABI(),
-		};
-
 		try {
-			const txHash = await window.ethereum.request({
-				method: "eth_sendTransaction",
-				params: [transactionParameters],
-			});
-			return {
-				success: true,
-				status:
-					"✅ Check out your transaction on Etherscan: https://etherscan.io/tx/" +
-					txHash,
-			};
-		} catch (error) {
-			return {
-				success: false,
-				status: "😥 Something went wrong: " + error.message,
-			};
-		}
+			window.contract = await new web3.eth.Contract(
+				contractABI.abi,
+				contractAddress
+			);
+
+			let method = window.contract.methods.mintDiaDragonTier1();
+			if (amount.toString() === "0.23") {
+				method = window.contract.methods.mintDiaDragonTier2();
+			} else if (amount.toString() === "0.4") {
+				console.log("tier3");
+
+				method = window.contract.methods.mintDiaDragonTier3();
+			} else if (amount.toString() === "1.75") {
+				method = window.contract.methods.mintDiaDragonTier4();
+			} else {
+				method = window.contract.methods.mintDiaDragonTier1();
+			}
+			try {
+				const transactionParameters = {
+					to: contractAddress, // Required except during contract publications.
+					from: window.ethereum.selectedAddress, // must match user's active address.
+					value: web3.utils.numberToHex(web3.utils.toWei(amount, "ether")),
+					data: method.encodeABI(),
+				};
+
+				const txHash = await window.ethereum.request({
+					method: "eth_sendTransaction",
+					params: [transactionParameters],
+				});
+				return {
+					success: true,
+					status:
+						"✅ Check out your transaction on Etherscan: https://etherscan.io/tx/" +
+						txHash,
+				};
+			} catch (error) {
+				return {
+					success: false,
+					status: "😥 Something went wrong: " + error.message,
+				};
+			}
+		} catch (e) {}
 	};
 
 	const Completionist = () => {
