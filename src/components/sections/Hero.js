@@ -25,33 +25,35 @@ const defaultProps = {
 };
 
 const mintNFT = async (amount) => {
-	window.contract = await new web3.eth.Contract(
-		contractABI.abi,
-		contractAddress
-	);
-
-	const transactionParameters = {
-		to: contractAddress, // Required except during contract publications.
-		from: window.ethereum.selectedAddress, // must match user's active address.
-		value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
-		data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
-	};
-
 	try {
-		const txHash = await window.ethereum.request({
-			method: "eth_sendTransaction",
-			params: [transactionParameters],
-		});
-		return {
-			success: true,
-			status: "https://etherscan.io/tx/" + txHash,
+		window.contract = await new web3.eth.Contract(
+			contractABI.abi,
+			contractAddress
+		);
+
+		const transactionParameters = {
+			to: contractAddress, // Required except during contract publications.
+			from: window.ethereum.selectedAddress, // must match user's active address.
+			value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
+			data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
 		};
-	} catch (error) {
-		return {
-			success: false,
-			status: "😥 Something went wrong: " + error.message,
-		};
-	}
+
+		try {
+			const txHash = await window.ethereum.request({
+				method: "eth_sendTransaction",
+				params: [transactionParameters],
+			});
+			return {
+				success: true,
+				status: "https://etherscan.io/tx/" + txHash,
+			};
+		} catch (error) {
+			return {
+				success: false,
+				status: "😥 Something went wrong: " + error.message,
+			};
+		}
+	} catch (e) {}
 };
 
 const getTotal = async () => {
