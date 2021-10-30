@@ -161,17 +161,19 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Coming soon
+						Mint Now for .05 ETH!
 					</h1>
-					<h2 style={{ color: "#23ccfa" }}>
-						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
-						{zeroPad(seconds)}
-					</h2>
+					<h2></h2>
 					<p className='m-0 mb-16'>
-						Join our Discord to be one of the first to mint a Diadragon!
+						Once you have minted your Diadragon egg Join our{" "}
+						<a href='https://discord.gg/xNwzzYGupY'>discord</a> and type !join
+						in any channel to get verified!
 					</p>
-					<img src={egg} alt='loading...' width={256} height={256} />
-					{/* {<Completionist />} */}
+					<p>{total}/11,111</p>
+
+					<img src={diadragongif} alt='loading...' width={256} height={256} />
+					{<Completionist />}
+					<div>{showTx(success)}</div>
 				</div>
 			);
 		}
@@ -200,9 +202,8 @@ const Hero = ({
 						<div className='reveal-from-bottom' data-reveal-delay='600'>
 							<Countdown
 								date={
-									Date.now() +
-									Date.UTC(2021, 9, 30, 17, 0, 0, 0).valueOf() -
-									Date.now()
+									//Date.now() +
+									Date.UTC(2021, 9, 30, 17, 0, 0, 0).valueOf() - Date.now()
 								}
 								renderer={renderer}
 							/>
