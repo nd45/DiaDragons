@@ -60,9 +60,9 @@ const CauseHero = ({
 							height='315'
 							src='https://www.youtube.com/embed/0L68m7e7_9w'
 							title='YouTube video player'
-							frameborder='0'
+							frameBorder='0'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-							allowfullscreen></iframe>
+							allowFullScreen></iframe>
 					</div>
 					<p className='m-0 mt-16'>
 						For more information about the logistics and mission of this
@@ -75,9 +75,9 @@ const CauseHero = ({
 							height='315'
 							src='https://www.youtube.com/embed/vz4-NDarUaE'
 							title='YouTube video player'
-							frameborder='0'
+							frameBorder='0'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-							allowfullscreen></iframe>
+							allowFullScreen></iframe>
 					</div>
 					<p className='m-0 mt-16'>
 						Now that you understand our mission! Make an account and Come chat

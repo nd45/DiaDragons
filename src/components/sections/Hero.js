@@ -4,7 +4,9 @@ import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import egg from "./../../assets/images/egg.gif";
+import diadragongif from "./../../assets/images/diadragon-gif.gif";
 import Countdown, { zeroPad } from "react-countdown";
+import Testimonial from "./Testimonial";
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
@@ -32,7 +34,7 @@ const mintNFT = async (amount) => {
 		to: contractAddress, // Required except during contract publications.
 		from: window.ethereum.selectedAddress, // must match user's active address.
 		value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
-		data: window.contract.methods.mintDiadragons(1).encodeABI(),
+		data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
 	};
 
 	try {
@@ -52,6 +54,33 @@ const mintNFT = async (amount) => {
 	}
 };
 
+const getTotal = async () => {
+	window.contract = await new web3.eth.Contract(
+		contractABI.abi,
+		contractAddress
+	);
+
+	const transactionParameters = {
+		to: contractAddress, // Required except during contract publications.
+		from: window.ethereum.selectedAddress, // must match user's active address.
+		data: window.contract.methods.getTotalSupply().encodeABI(),
+	};
+
+	try {
+		const total = await window.ethereum.request({
+			method: "eth_call",
+			params: [transactionParameters],
+		});
+		return {
+			total: parseInt(Number(total), 10),
+		};
+	} catch (error) {
+		return {
+			total: "😥 Something went wrong: " + error.message,
+		};
+	}
+};
+
 const Hero = ({
 	className,
 	topOuterDivider,
@@ -65,6 +94,13 @@ const Hero = ({
 	const [videoModalActive, setVideomodalactive] = useState(false);
 	const [status, setStatus] = useState("");
 	const [success, setSuccess] = useState("");
+	const [total, setTotal] = useState("");
+	const totalSupply = async () => {
+		const { total } = await getTotal();
+		setTotal(total);
+	};
+
+	totalSupply();
 
 	const onMintPressed = async () => {
 		const { status, success } = await mintNFT();
@@ -105,12 +141,17 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Minting available
+						Mint Now for .05 ETH!
 					</h1>
+					<h2></h2>
 					<p className='m-0 mb-16'>
-						Join our Discord to be one of the first to mint a Diadragon!
+						Once you have minted your Diadragon egg Join our{" "}
+						<a href='https://discord.gg/xNwzzYGupY'>discord</a> and type !join
+						in any channel to get verified!
 					</p>
-					<img src={egg} alt='loading...' width={256} height={256} />
+					<p>{total}/11,111</p>
+
+					<img src={diadragongif} alt='loading...' width={256} height={256} />
 					{<Completionist />}
 					<div>{showTx(success)}</div>
 				</div>
@@ -175,9 +216,9 @@ const Hero = ({
 					height='315'
 					src='https://www.youtube.com/embed/0L68m7e7_9w'
 					title='YouTube video player'
-					frameborder='0'
+					frameBorder='0'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-					allowfullscreen></iframe>
+					allowFullScreen></iframe>
 			</div>
 		</section>
 	);
