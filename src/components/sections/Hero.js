@@ -76,7 +76,7 @@ const getTotal = async () => {
 			try {
 				const test = parseInt(Number(total), 10);
 				return {
-					total: 0,
+					total: test,
 				};
 			} catch (e) {
 				return {
