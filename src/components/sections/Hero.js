@@ -76,7 +76,11 @@ const getTotal = async () => {
 			return {
 				total: test,
 			};
-		} catch (e) {}
+		} catch (e) {
+			return {
+				total: 0,
+			};
+		}
 	} catch (error) {
 		return {
 			total: 0,
