@@ -3,13 +3,12 @@ import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
-import { mintNFT } from "../../util/interact.js";
 import egg from "./../../assets/images/egg.gif";
 import Countdown, { zeroPad } from "react-countdown";
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
-const contractAddress = "0x1F9E51199D587190120C8180D0Ce0B9bd61D0229";
+const contractAddress = "0x9c7F6bE687a6EE6Bc1C2eF28f33493F75e54413F";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
@@ -21,6 +20,36 @@ const propTypes = {
 
 const defaultProps = {
 	...SectionProps.defaults,
+};
+
+const mintNFT = async (amount) => {
+	window.contract = await new web3.eth.Contract(
+		contractABI.abi,
+		contractAddress
+	);
+
+	const transactionParameters = {
+		to: contractAddress, // Required except during contract publications.
+		from: window.ethereum.selectedAddress, // must match user's active address.
+		value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
+		data: window.contract.methods.mintDiadragons(1).encodeABI(),
+	};
+
+	try {
+		const txHash = await window.ethereum.request({
+			method: "eth_sendTransaction",
+			params: [transactionParameters],
+		});
+		return {
+			success: true,
+			status: "https://etherscan.io/tx/" + txHash,
+		};
+	} catch (error) {
+		return {
+			success: false,
+			status: "😥 Something went wrong: " + error.message,
+		};
+	}
 };
 
 const Hero = ({
@@ -35,14 +64,27 @@ const Hero = ({
 }) => {
 	const [videoModalActive, setVideomodalactive] = useState(false);
 	const [status, setStatus] = useState("");
+	const [success, setSuccess] = useState("");
 
 	const onMintPressed = async () => {
-		const { status } = await mintNFT();
+		const { status, success } = await mintNFT();
 		setStatus(status);
+		setSuccess(success);
 	};
+
+	const showTx = (bool) => {
+		if (bool) {
+			return (
+				<p id='status' style={{ color: "white" }}>
+					<a href={status}>View Transaction</a>
+				</p>
+			);
+		}
+	};
+
 	const Completionist = () => {
 		return (
-			<div>
+			<div className='mt-16 mb-16'>
 				<ButtonGroup>
 					<Button
 						tag='a'
@@ -53,16 +95,28 @@ const Hero = ({
 						Mint DiaDragon
 					</Button>
 				</ButtonGroup>
-				<p id='status' style={{ color: "red" }}>
-					{status}
-				</p>
 			</div>
 		);
 	};
 	// Renderer callback with condition
 	const renderer = ({ days, hours, minutes, seconds, completed }) => {
-		if (!completed) {
+		if (completed) {
 			// Render a completed state
+			return (
+				<div>
+					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
+						Minting available
+					</h1>
+					<p className='m-0 mb-16'>
+						Join our Discord to be one of the first to mint a Diadragon!
+					</p>
+					<img src={egg} alt='loading...' width={256} height={256} />
+					{<Completionist />}
+					<div>{showTx(success)}</div>
+				</div>
+			);
+		} else {
+			// Render a countdown
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
@@ -77,23 +131,6 @@ const Hero = ({
 					</p>
 					<img src={egg} alt='loading...' width={256} height={256} />
 					{/* {<Completionist />} */}
-				</div>
-			);
-		} else {
-			// Render a countdown
-			return (
-				<div>
-					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Coming soon
-					</h1>
-					<p className='m-0 mb-16'>
-						Join our Discord to be one of the first to mint a Diadragon!
-					</p>
-					<img src={egg} alt='loading...' width={300} height={300} />
-					{/* <h2 style={{ color: "#23ccfa" }}>
-						{zeroPad(days)}:{zeroPad(hours)}:{zeroPad(minutes)}:
-						{zeroPad(seconds)}
-					</h2> */}
 				</div>
 			);
 		}
