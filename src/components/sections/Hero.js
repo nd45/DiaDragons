@@ -75,7 +75,7 @@ const getTotal = async () => {
 			try {
 				const test = parseInt(Number(total), 10);
 				return {
-					total: test,
+					total: 0,
 				};
 			} catch (e) {
 				return {
@@ -89,7 +89,7 @@ const getTotal = async () => {
 		}
 	} catch (e) {
 		return {
-			total: test,
+			total: 0,
 		};
 	}
 };
