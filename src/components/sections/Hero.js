@@ -87,7 +87,11 @@ const getTotal = async () => {
 				total: 0,
 			};
 		}
-	} catch (e) {}
+	} catch (e) {
+		return {
+			total: test,
+		};
+	}
 };
 
 const Hero = ({
