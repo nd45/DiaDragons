@@ -55,37 +55,39 @@ const mintNFT = async (amount) => {
 };
 
 const getTotal = async () => {
-	window.contract = await new web3.eth.Contract(
-		contractABI.abi,
-		contractAddress
-	);
-
-	const transactionParameters = {
-		to: contractAddress, // Required except during contract publications.
-		from: window.ethereum.selectedAddress, // must match user's active address.
-		data: window.contract.methods.getTotalSupply().encodeABI(),
-	};
-
 	try {
-		const total = await window.ethereum.request({
-			method: "eth_call",
-			params: [transactionParameters],
-		});
+		window.contract = await new web3.eth.Contract(
+			contractABI.abi,
+			contractAddress
+		);
+
+		const transactionParameters = {
+			to: contractAddress, // Required except during contract publications.
+			from: window.ethereum.selectedAddress, // must match user's active address.
+			data: window.contract.methods.getTotalSupply().encodeABI(),
+		};
+
 		try {
-			const test = parseInt(Number(total), 10);
-			return {
-				total: test,
-			};
-		} catch (e) {
+			const total = await window.ethereum.request({
+				method: "eth_call",
+				params: [transactionParameters],
+			});
+			try {
+				const test = parseInt(Number(total), 10);
+				return {
+					total: test,
+				};
+			} catch (e) {
+				return {
+					total: 0,
+				};
+			}
+		} catch (error) {
 			return {
 				total: 0,
 			};
 		}
-	} catch (error) {
-		return {
-			total: 0,
-		};
-	}
+	} catch (e) {}
 };
 
 const Hero = ({
