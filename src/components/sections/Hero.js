@@ -136,14 +136,11 @@ const Hero = ({
 		return (
 			<div className='mt-16 mb-16'>
 				<ButtonGroup>
-					<Button
-						tag='a'
-						color='primary'
-						wideMobile
-						id='mintButton'
-						onClick={onMintPressed}>
-						Mint DiaDragon
-					</Button>
+					<a href='https://diadragons.myshopify.com/collections/all'>
+						<Button tag='a' color='primary' wideMobile id='mintButton'>
+							Shop Now
+						</Button>
+					</a>
 				</ButtonGroup>
 			</div>
 		);
@@ -154,16 +151,12 @@ const Hero = ({
 			// Render a completed state
 			return (
 				<div>
-					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Mint Now for .05 ETH!
-					</h1>
 					<h2></h2>
 					<p className='m-0 mb-16'>
 						Once you have minted your Diadragon egg Join our{" "}
 						<a href='https://discord.gg/xNwzzYGupY'>discord</a> and type !join
 						in any channel to get verified!
 					</p>
-					<p>{total}/11,111</p>
 
 					<img src={diadragongif} alt='loading...' width={256} height={256} />
 					{<Completionist />}
@@ -174,16 +167,12 @@ const Hero = ({
 			// Render a countdown
 			return (
 				<div>
-					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Mint Now for .05 ETH!
-					</h1>
 					<h2></h2>
 					<p className='m-0 mb-16'>
 						Once you have minted your Diadragon egg Join our{" "}
 						<a href='https://discord.gg/xNwzzYGupY'>discord</a> and type !join
 						in any channel to get verified!
 					</p>
-					<p>{total}/11,111</p>
 
 					<img src={diadragongif} alt='loading...' width={256} height={256} />
 					{<Completionist />}
