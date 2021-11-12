@@ -11,7 +11,7 @@ import Testimonial from "./Testimonial";
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
 const contractAddress = "0x9c7F6bE687a6EE6Bc1C2eF28f33493F75e54413F";
-const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+// const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 // const web3 = createAlchemyWeb3(alchemyKey);
 
 //window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);

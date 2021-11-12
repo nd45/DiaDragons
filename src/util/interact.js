@@ -4,7 +4,7 @@ require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../artifacts/contracts/DiaDragons.sol/Diadragons.json");
 const contractAddress = "0x0FD6BaEE3d4e278F05D156C2d888B87fBaB2485E";
-const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+// const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 // const web3 = createAlchemyWeb3(alchemyKey);
 
 export const connectWallet = async () => {
