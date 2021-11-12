@@ -21,6 +21,9 @@ const Timeline = () => {
 				{/* <h4 className='vertical-timeline-element-subtitle'>Miami, FL</h4> */}
 				<p>
 					⚬ Diadragons Backstory Animation revealed <br />
+					⚬ Mission Video Released. <br />
+					⚬ Giveaways & prizes sent to pre-sale contest winners. <br />
+					⚬ ETH dragons Minted. <br />
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -31,18 +34,15 @@ const Timeline = () => {
 				iconStyle={{ background: "#23ccfa", color: "#fff" }}
 				// icon={<WorkIcon />}
 			>
-				<h3 className='vertical-timeline-element-title'>Prelaunch</h3>
+				<h3 className='vertical-timeline-element-title'>
+					Surprise milestones!{" "}
+				</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Miami, FL</h4> */}
 				<p>
-					⚬ Daily challenges to win a Free-Diadragon! <br />
-					⚬ Weekly townhalls & kahoot challenges: <br />
-					&emsp;• Get updates from the team and chat with us about the project!
-					<br />
-					⚬ Weekly townhalls
-					<br /> ⚬ Pre-launch merch!
-					<br />
-					&emsp;• Deets announced soon! Invite 10 friends to the discord to get
-					access to the hidden chat!
+					⚬ When ETH gas surges our team doesn’t quit, we pivot. <br />
+					⚬ Switch to Polygon to avoid gas fees. <br />
+					⚬ Price adjustments.
+					<br /> ⚬ Payment gateway for community who thinks in FIAT.
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -53,15 +53,15 @@ const Timeline = () => {
 				// icon={<WorkIcon />}
 			>
 				<h3 className='vertical-timeline-element-title'>
-					Pre-Sale: October 27th
+					The Great Migration: November 11
 				</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>
 					San Francisco, CA
 				</h4> */}
 				<p>
-					{/* ⚬ If you invite 10 friends and answer a question you will have access
-					to our pre-launch! This is the best way to get a diadragon (or two)
-					with low gas fees! */}
+					⚬ Airdrop Polygon Diadragons to owners of ETH Diadragons. <br />⚬
+					Reopen minting gateway for FIAT purchasing to eliminate gas fees for
+					buyers.
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -72,10 +72,13 @@ const Timeline = () => {
 				// icon={<WorkIcon />}
 			>
 				<h3 className='vertical-timeline-element-title'>
-					Mint Day: October 30th
+					Diabetes Awareness Month:
 				</h3>
-				{/* <h4 className='vertical-timeline-element-subtitle'>Los Angeles, CA</h4> */}
-				{/* <p>User Experience, Visual Design</p> */}
+				<p>
+					⚬ Social Media challenges and Diadragon Art Contest. <br />
+					⚬ Diadragons are featured in new channels ranging from Yahoo Finance
+					to NFT Culture. <br />⚬ Health focused giveaways.
+				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
 				className='vertical-timeline-element--education'
@@ -84,33 +87,12 @@ const Timeline = () => {
 				iconStyle={{ background: "#23ccfa", color: "#fff" }}
 				// icon={<SchoolIcon />}
 			>
-				<h3 className='vertical-timeline-element-title'>
-					Diabetes awareness month: November 2021
-				</h3>
+				<h3 className='vertical-timeline-element-title'>Sold out:</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Online Course</h4> */}
 				<p>
-					⚬ Got any games?
-					<br />
-					&emsp;• Earn Your Wings Challenge Announcement. <br />
-					⚬ Make it rain
-					<br />
-					&emsp;• Life Drops begin. <br />
-					⚬ Twitter takeover
-					<br />
-					&emsp;• Change your PFP to gain access to new Diadragon banners,
-					memes, and animations. <br />
-					&emsp;• Art contests, theme song contest. <br />
-					⚬ Ready for our close up
-					<br />
-					&emsp;• Diadragons hits the press. Diadragons will be featured in
-					ExpressionMed’s annual Diabetes Awareness month partnerships and
-					influencer promotions. <br />
-					⚬ Health Focused Weekly Giveaways
-					<br />
-					&emsp;• Nutrisense, Levels, Cooking Lessons, Personal Trainers, Scuba
-					Certification, Castle Tour Vacation, and more! <br />
-					&emsp;• These giveaways will be based on which traits your Diadragon
-					has so make sure you collect a variety of traits! <br />{" "}
+					⚬ Donate at least 5 life drops and pay a year’s worth of insulin and
+					cgm supplies for 5 people. If we still have funds left we will select
+					more winners until we run out.
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -120,11 +102,18 @@ const Timeline = () => {
 				iconStyle={{ background: "#23ccfa", color: "#fff" }}
 				// icon={<SchoolIcon />}
 			>
-				<h3 className='vertical-timeline-element-title'>December</h3>
+				<h3 className='vertical-timeline-element-title'>
+					Building a Life Drop Dao.{" "}
+				</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Certification</h4> */}
 				<p>
-					⚬ Merch for Diadragon Holders
-					<br />⚬ Diadragons Cookbook: Metabolic Health Noms iykyk
+					⚬ Diadragons are the first step to making insulin more accessible and
+					affordable but they are not the last.
+					<br />⚬ We will work with our partners Thanisi Dilos and the team at
+					Civics Unplugged to build a DAO to collect donations, and a tokenomics
+					system to allow the funds to be utilized to purchase insulin in a way
+					that involves less manual labor than our current life drops execution
+					strategy.
 				</p>
 			</VerticalTimelineElement>
 			<VerticalTimelineElement
@@ -134,16 +123,14 @@ const Timeline = () => {
 				iconStyle={{ background: "#23ccfa", color: "#fff" }}
 				// icon={<SchoolIcon />}
 			>
-				<h3 className='vertical-timeline-element-title'>Q1-2022</h3>
+				<h3 className='vertical-timeline-element-title'>Games</h3>
 				{/* <h4 className='vertical-timeline-element-subtitle'>Bachelor Degree</h4> */}
 				<p>
-					⚬ Product development for awareness (interactive merch!)
-					<br />⚬ DAO <br />
-					&emsp;• We want to build a DAO with the initiative of filling the gaps
-					in medical expenses and laws that are not currently filled by
-					non-profits and insurance companies. Some people are not supported due
-					to government restrictions. Let’s decide together who needs our help
-					and what we can do about it
+					⚬ In our brainstorming channel on discord, there has been talk of a
+					Diadragons meets flappy bird educational game. When we will sell out
+					we will work to make this vision a reality. Intrigued to know how it
+					would work? Jump into our{" "}
+					<a href='https://discord.com/invite/hVYBgdKQVq'>Discord.</a>
 				</p>
 			</VerticalTimelineElement>
 		</VerticalTimeline>

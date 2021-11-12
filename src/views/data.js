@@ -17,20 +17,15 @@ const questions = [
 	{
 		id: 4,
 		title: "What blockchain is it on?",
-		info: "ERC-721 token on the Ethereum Blockchain.",
+		info: "ERC-721 token on the Polygon Blockchain.",
 	},
 	{
 		id: 5,
 		title: "How much will it cost to mint?",
-		info: "Each Diadragon will be minted for 0.05 Eth + Gas on October 30th at TBD. You can earn early access and bulk discounts through our discord channel.",
+		info: "Each Diadragon will cost $30 USD.",
 	},
 	{
 		id: 6,
-		title: "What value will I get besides owning digital art?",
-		info: "The team will continuously add to the value we provide but for now there are guaranteed plans of gamification, health related giveaways (personal chefs, private trainers, vacations etc)",
-	},
-	{
-		id: 7,
 		title: "Can I still win a giveaway if I want to remain anonymous?",
 		info: "Yes. All giveaway correspondence will happen over discord.  Upon request, the coordination of prizes can be handled by the third party professional and the winner. The team/community will never know your name, address, or other personal information.",
 	},
