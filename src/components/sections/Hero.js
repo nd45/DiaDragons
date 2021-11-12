@@ -12,9 +12,9 @@ const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
 const contractAddress = "0x9c7F6bE687a6EE6Bc1C2eF28f33493F75e54413F";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-const web3 = createAlchemyWeb3(alchemyKey);
+// const web3 = createAlchemyWeb3(alchemyKey);
 
-window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
+//window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
 
 const propTypes = {
 	...SectionProps.types,
@@ -25,74 +25,71 @@ const defaultProps = {
 };
 
 const mintNFT = async (amount) => {
-	try {
-		window.contract = await new web3.eth.Contract(
-			contractABI.abi,
-			contractAddress
-		);
-		try {
-			const transactionParameters = {
-				to: contractAddress, // Required except during contract publications.
-				from: window.ethereum.selectedAddress, // must match user's active address.
-				value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
-				data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
-			};
-
-			const txHash = await window.ethereum.request({
-				method: "eth_sendTransaction",
-				params: [transactionParameters],
-			});
-			return {
-				success: true,
-				status: "https://etherscan.io/tx/" + txHash,
-			};
-		} catch (error) {
-			return {
-				success: false,
-				status: "😥 Something went wrong: " + error.message,
-			};
-		}
-	} catch (e) {}
+	// try {
+	// 	window.contract = await new web3.eth.Contract(
+	// 		contractABI.abi,
+	// 		contractAddress
+	// 	);
+	// 	try {
+	// 		const transactionParameters = {
+	// 			to: contractAddress, // Required except during contract publications.
+	// 			from: window.ethereum.selectedAddress, // must match user's active address.
+	// 			value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
+	// 			data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
+	// 		};
+	// 		const txHash = await window.ethereum.request({
+	// 			method: "eth_sendTransaction",
+	// 			params: [transactionParameters],
+	// 		});
+	// 		return {
+	// 			success: true,
+	// 			status: "https://etherscan.io/tx/" + txHash,
+	// 		};
+	// 	} catch (error) {
+	// 		return {
+	// 			success: false,
+	// 			status: "😥 Something went wrong: " + error.message,
+	// 		};
+	// 	}
+	// } catch (e) {}
 };
 
 const getTotal = async () => {
-	try {
-		window.contract = await new web3.eth.Contract(
-			contractABI.abi,
-			contractAddress
-		);
-
-		const transactionParameters = {
-			to: contractAddress, // Required except during contract publications.
-			from: window.ethereum.selectedAddress, // must match user's active address.
-			data: window.contract.methods.getTotalSupply().encodeABI(),
-		};
-
-		try {
-			const total = await window.ethereum.request({
-				method: "eth_call",
-				params: [transactionParameters],
-			});
-			try {
-				const test = parseInt(Number(total), 10);
-				return {
-					total: test,
-				};
-			} catch (e) {
-				return {
-					total: 0,
-				};
-			}
-		} catch (error) {
-			return {
-				total: 0,
-			};
-		}
-	} catch (e) {
-		return {
-			total: 0,
-		};
-	}
+	// try {
+	// 	window.contract = await new web3.eth.Contract(
+	// 		contractABI.abi,
+	// 		contractAddress
+	// 	);
+	// 	const transactionParameters = {
+	// 		to: contractAddress, // Required except during contract publications.
+	// 		from: window.ethereum.selectedAddress, // must match user's active address.
+	// 		data: window.contract.methods.getTotalSupply().encodeABI(),
+	// 	};
+	// 	try {
+	// 		const total = await window.ethereum.request({
+	// 			method: "eth_call",
+	// 			params: [transactionParameters],
+	// 		});
+	// 		try {
+	// 			const test = parseInt(Number(total), 10);
+	// 			return {
+	// 				total: test,
+	// 			};
+	// 		} catch (e) {
+	// 			return {
+	// 				total: 0,
+	// 			};
+	// 		}
+	// 	} catch (error) {
+	// 		return {
+	// 			total: 0,
+	// 		};
+	// 	}
+	// } catch (e) {
+	// 	return {
+	// 		total: 0,
+	// 	};
+	// }
 };
 
 const Hero = ({
@@ -110,8 +107,8 @@ const Hero = ({
 	const [success, setSuccess] = useState("");
 	const [total, setTotal] = useState("");
 	const totalSupply = async () => {
-		const { total } = await getTotal();
-		setTotal(total);
+		//const { total } = await getTotal();
+		//setTotal(total);
 	};
 
 	totalSupply();
@@ -151,12 +148,7 @@ const Hero = ({
 			// Render a completed state
 			return (
 				<div>
-					<h2></h2>
-					<p className='m-0 mb-16'>
-						Once you have minted your Diadragon egg Join our{" "}
-						<a href='https://discord.gg/xNwzzYGupY'>discord</a> and type !join
-						in any channel to get verified!
-					</p>
+					<h1 className='m-0 mb-16'>Welcome To Diadragons! </h1>
 
 					<img src={diadragongif} alt='loading...' width={256} height={256} />
 					{<Completionist />}

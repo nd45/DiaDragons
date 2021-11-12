@@ -10,8 +10,6 @@ import LayoutDefault from "./layouts/LayoutDefault";
 import Home from "./views/Home";
 import FAQ from "./views/FAQ";
 import Cause from "./views/Cause";
-import Presale from "./views/Presale";
-import LayoutPresale from "./layouts/LayoutPresale";
 
 const App = () => {
 	const childRef = useRef();
@@ -35,12 +33,6 @@ const App = () => {
 						path='/cause'
 						component={Cause}
 						layout={LayoutDefault}
-					/>
-					<AppRoute
-						exact
-						path='/presale'
-						component={Presale}
-						layout={LayoutPresale}
 					/>
 				</Switch>
 			)}

@@ -1,10 +1,11 @@
 // import { pinJSONToIPFS } from "./pinata.js";
+import React from "react";
 require("dotenv").config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../artifacts/contracts/DiaDragons.sol/Diadragons.json");
 const contractAddress = "0x0FD6BaEE3d4e278F05D156C2d888B87fBaB2485E";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-const web3 = createAlchemyWeb3(alchemyKey);
+// const web3 = createAlchemyWeb3(alchemyKey);
 
 export const connectWallet = async () => {
 	try {
@@ -94,7 +95,6 @@ export const mintNFT = async () => {
 	// metadata.name = name;
 	// metadata.image = url;
 	// metadata.description = description;
-
 	// const pinataResponse = await pinJSONToIPFS(metadata);
 	// if (!pinataResponse.success) {
 	//   return {
@@ -103,42 +103,40 @@ export const mintNFT = async () => {
 	//   };
 	// }
 	// const tokenURI = pinataResponse.pinataUrl;
-	try {
-		window.contract = await new web3.eth.Contract(
-			contractABI.abi,
-			contractAddress
-		);
-
-		const transactionParameters = {
-			to: contractAddress, // Required except during contract publications.
-			from: window.ethereum.selectedAddress, // must match user's active address.
-			value: web3.utils.numberToHex(
-				web3.utils.toWei((0.05).toString(), "ether")
-			),
-			data: window.contract.methods.mintDiadragonTier1().encodeABI(),
-		};
-
-		try {
-			const txHash = await window.ethereum.request({
-				method: "eth_sendTransaction",
-				params: [transactionParameters],
-			});
-			return {
-				success: true,
-				status:
-					"✅ Check out your transaction on Etherscan: https://etherscan.io/tx/" +
-					txHash,
-			};
-		} catch (error) {
-			return {
-				success: false,
-				status: "😥 Something went wrong: wallet not found",
-			};
-		}
-	} catch (error) {
-		return {
-			success: false,
-			status: "😥 Something went wrong: wallet not found",
-		};
-	}
+	// try {
+	// 	// window.contract = await new web3.eth.Contract(
+	// 	// 	contractABI.abi,
+	// 	// 	contractAddress
+	// 	// );
+	// 	const transactionParameters = {
+	// 		to: contractAddress, // Required except during contract publications.
+	// 		from: window.ethereum.selectedAddress, // must match user's active address.
+	// 		value: web3.utils.numberToHex(
+	// 			web3.utils.toWei((0.05).toString(), "ether")
+	// 		),
+	// 		data: window.contract.methods.mintDiadragonTier1().encodeABI(),
+	// 	};
+	// 	try {
+	// 		const txHash = await window.ethereum.request({
+	// 			method: "eth_sendTransaction",
+	// 			params: [transactionParameters],
+	// 		});
+	// 		return {
+	// 			success: true,
+	// 			status:
+	// 				"✅ Check out your transaction on Etherscan: https://etherscan.io/tx/" +
+	// 				txHash,
+	// 		};
+	// 	} catch (error) {
+	// 		return {
+	// 			success: false,
+	// 			status: "😥 Something went wrong: wallet not found",
+	// 		};
+	// 	}
+	// } catch (error) {
+	// 	return {
+	// 		success: false,
+	// 		status: "😥 Something went wrong: wallet not found",
+	// 	};
+	// }
 };

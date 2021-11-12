@@ -176,7 +176,7 @@ const Header = ({
 									{!hideSignin && (
 										<ul className='list-reset header-nav-right'>
 											<li>
-												<button
+												{/* <button
 													className='button button-primary button-wide-mobile button-sm'
 													id='walletButton'
 													onClick={connectWalletPressed}>
@@ -188,7 +188,7 @@ const Header = ({
 													) : (
 														<span>Connect Wallet</span>
 													)}
-												</button>
+												</button> */}
 											</li>
 										</ul>
 									)}
