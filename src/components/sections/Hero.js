@@ -86,14 +86,11 @@ const Hero = ({
 		return (
 			<div className='mt-16 mb-16'>
 				<ButtonGroup>
-					<Button
-						tag='a'
-						color='primary'
-						wideMobile
-						id='mintButton'
-						onClick={onMintPressed}>
-						Mint DiaDragon
-					</Button>
+					<a href='https://diadragons.myshopify.com/collections/all'>
+						<Button tag='a' color='primary' wideMobile id='mintButton'>
+							Shop Now
+						</Button>
+					</a>
 				</ButtonGroup>
 			</div>
 		);
@@ -105,11 +102,9 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='mt-0 mb-16 reveal-from-bottom' data-reveal-delay='200'>
-						Minting available
+						Welcome to DiaDragons
 					</h1>
-					<p className='m-0 mb-16'>
-						Join our Discord to be one of the first to mint a Diadragon!
-					</p>
+
 					<img src={egg} alt='loading...' width={256} height={256} />
 					{<Completionist />}
 					<div>{showTx(success)}</div>
