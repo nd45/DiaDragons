@@ -10,14 +10,14 @@ const { REACT_APP_ALCHEMY_KEY, PRIVATE_KEY } = process.env;
 
 module.exports = {
 	solidity: "0.8.0",
-	defaultNetwork: "rinkeby",
+	defaultNetwork: "mainnet",
 	networks: {
-		rinkeby: {
+		mainnet: {
 			url: REACT_APP_ALCHEMY_KEY,
 			accounts: [
-				`0x5a557493d3fa4e06adae228fac2d036739173900541cb901c7607be9078f512d`,
+				`0xb86d58ce6c4b63cb592db1d1b5a3ac6adcf04ed3ea516a060868d9b09895eda3`,
 			],
-		},
+		},   
 	},
 	etherscan: {
 		// Your API key for Etherscan
