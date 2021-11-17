@@ -48,7 +48,7 @@ const mintNFT = async (amount) => {
 			});
 			return {
 				success: true,
-				status: "https://polygonscan.io/tx/" + txHash,
+				status: "https://polygonscan.com/tx/" + txHash,
 			};
 		} catch (error) {
 			return {
@@ -189,7 +189,7 @@ const Hero = ({
 				<ButtonGroup>
 					<a href='https://diadragons.myshopify.com/collections/all'>
 						<Button tag='a' color='primary' wideMobile id='mintButton'>
-							Shop Now
+							Mint with USD
 						</Button>
 					</a>
 					<Button
@@ -212,10 +212,14 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='m-0 mb-16'>Welcome To Diadragons! </h1>
-					<p>{total}/11,111</p>
+					<p>
+						Diadragons are available now for $30 USD or 15 MATIC <br></br>Buy
+						now to support a good cause: gifting insulin to people who need it!
+					</p>
 					<img src={diadragongif} alt='loading...' width={256} height={256} />
 					{<Completionist />}
 					<div>{showTx(success)}</div>
+					<p>{total}/11,111</p>
 				</div>
 			);
 		} else {
