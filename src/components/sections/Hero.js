@@ -112,8 +112,8 @@ const Hero = ({
 	const [success, setSuccess] = useState("");
 	const [total, setTotal] = useState("");
 	const totalSupply = async () => {
-		//const { total } = await getTotal();
-		//setTotal(total);
+		const { total } = await getTotal();
+		setTotal(total);
 	};
 
 	const test = async () => {
@@ -212,7 +212,7 @@ const Hero = ({
 			return (
 				<div>
 					<h1 className='m-0 mb-16'>Welcome To Diadragons! </h1>
-
+					<p>{total}/11,111</p>
 					<img src={diadragongif} alt='loading...' width={256} height={256} />
 					{<Completionist />}
 					<div>{showTx(success)}</div>

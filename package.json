@@ -2,6 +2,9 @@
   "name": "DiaDragons",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@alch/alchemy-web3": "^1.0.1",
     "classnames": "^2.2.6",
