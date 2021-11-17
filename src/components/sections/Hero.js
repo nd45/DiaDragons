@@ -7,14 +7,16 @@ import egg from "./../../assets/images/egg.gif";
 import diadragongif from "./../../assets/images/diadragon-gif.gif";
 import Countdown, { zeroPad } from "react-countdown";
 import Testimonial from "./Testimonial";
+import detectEthereumProvider from "@metamask/detect-provider";
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const contractABI = require("../../artifacts/contracts/DiaDragons.sol/Diadragons.json");
-const contractAddress = "0x9c7F6bE687a6EE6Bc1C2eF28f33493F75e54413F";
-// const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-// const web3 = createAlchemyWeb3(alchemyKey);
+const contractAddress = "0xcc407c43572b96Be0aE774653D2a48e33aB49c3A";
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+const web3 = createAlchemyWeb3(alchemyKey);
+const provider = detectEthereumProvider();
 
-//window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
+window.contract = new web3.eth.Contract(contractABI.abi, contractAddress);
 
 const propTypes = {
 	...SectionProps.types,
@@ -25,71 +27,74 @@ const defaultProps = {
 };
 
 const mintNFT = async (amount) => {
-	// try {
-	// 	window.contract = await new web3.eth.Contract(
-	// 		contractABI.abi,
-	// 		contractAddress
-	// 	);
-	// 	try {
-	// 		const transactionParameters = {
-	// 			to: contractAddress, // Required except during contract publications.
-	// 			from: window.ethereum.selectedAddress, // must match user's active address.
-	// 			value: web3.utils.numberToHex(web3.utils.toWei(".05", "ether")),
-	// 			data: window.contract.methods.mintDiaDragonTier1().encodeABI(),
-	// 		};
-	// 		const txHash = await window.ethereum.request({
-	// 			method: "eth_sendTransaction",
-	// 			params: [transactionParameters],
-	// 		});
-	// 		return {
-	// 			success: true,
-	// 			status: "https://etherscan.io/tx/" + txHash,
-	// 		};
-	// 	} catch (error) {
-	// 		return {
-	// 			success: false,
-	// 			status: "😥 Something went wrong: " + error.message,
-	// 		};
-	// 	}
-	// } catch (e) {}
+	try {
+		console.log("here");
+		window.contract = await new web3.eth.Contract(
+			contractABI.abi,
+			contractAddress
+		);
+		try {
+			console.log("here");
+
+			const transactionParameters = {
+				to: contractAddress, //Required except during contract publications.
+				from: window.ethereum.selectedAddress, // must match user's active address.
+				value: web3.utils.numberToHex(web3.utils.toWei("15", "ether")),
+				data: window.contract.methods.mintDiadragons(1).encodeABI(),
+			};
+			const txHash = await window.ethereum.request({
+				method: "eth_sendTransaction",
+				params: [transactionParameters],
+			});
+			return {
+				success: true,
+				status: "https://polygonscan.io/tx/" + txHash,
+			};
+		} catch (error) {
+			return {
+				success: false,
+				status: "😥 Something went wrong: " + error.message,
+			};
+		}
+	} catch (e) {}
 };
 
 const getTotal = async () => {
-	// try {
-	// 	window.contract = await new web3.eth.Contract(
-	// 		contractABI.abi,
-	// 		contractAddress
-	// 	);
-	// 	const transactionParameters = {
-	// 		to: contractAddress, // Required except during contract publications.
-	// 		from: window.ethereum.selectedAddress, // must match user's active address.
-	// 		data: window.contract.methods.getTotalSupply().encodeABI(),
-	// 	};
-	// 	try {
-	// 		const total = await window.ethereum.request({
-	// 			method: "eth_call",
-	// 			params: [transactionParameters],
-	// 		});
-	// 		try {
-	// 			const test = parseInt(Number(total), 10);
-	// 			return {
-	// 				total: test,
-	// 			};
-	// 		} catch (e) {
-	// 			return {
-	// 				total: 0,
-	// 			};
-	// 		}
-	// 	} catch (error) {
-	// 		return {
-	// 			total: 0,
-	// 		};
-	// 	}
-	// } catch (e) {
-	// 	return {
-	// 		total: 0,
-	// 	};
-	// }
+	try {
+		window.contract = await new web3.eth.Contract(
+			contractABI.abi,
+			contractAddress
+		);
+		const transactionParameters = {
+			to: contractAddress, // Required except during contract publications.
+			from: window.ethereum.selectedAddress, // must match user's active address.
+			data: window.contract.methods.getTotalSupply().encodeABI(),
+		};
+		try {
+			const total = await window.ethereum.request({
+				method: "eth_call",
+				params: [transactionParameters],
+			});
+			try {
+				const test = parseInt(Number(total), 10);
+				return {
+					total: test,
+				};
+			} catch (e) {
+				return {
+					total: 0,
+				};
+			}
+		} catch (error) {
+			return {
+				total: 0,
+			};
+		}
+	} catch (e) {
+		return {
+			total: 0,
+		};
+	}
 };
 
 const Hero = ({
@@ -110,6 +115,55 @@ const Hero = ({
 		//const { total } = await getTotal();
 		//setTotal(total);
 	};
+
+	const test = async () => {
+		try {
+			await window.ethereum.request({
+				method: "wallet_switchEthereumChain",
+				params: [{ chainId: "0x89" }],
+			});
+		} catch (switchError) {
+			// This error code indicates that the chain has not been added to MetaMask.
+			if (switchError.code === 4902) {
+				try {
+					await window.ethereum.request({
+						method: "wallet_addEthereumChain",
+						params: [{ chainId: "0x89", rpcUrl: "https://polygon-rpc.com" }],
+					});
+				} catch (addError) {
+					// handle "add" error
+				}
+			}
+			// handle other "switch" errors
+		}
+	};
+
+	const trythis = async () => {
+		if (provider) {
+			console.log("Ethereum successfully detected!");
+
+			// From now on, this should always be true:
+			// provider === window.ethereum
+
+			// Access the decentralized web!
+
+			// Legacy providers may only have ethereum.sendAsync
+			return await window.ethereum
+				.request({
+					method: "eth_chainId",
+				})
+				.then(console.log);
+		} else {
+			// if the provider is not detected, detectEthereumProvider resolves to null
+			//	console.error("Please install MetaMask!", error);
+		}
+	};
+	const chain = trythis();
+
+	console.log(chain);
+	if (chain != "0x89") {
+		test();
+	}
 
 	totalSupply();
 
@@ -138,6 +192,15 @@ const Hero = ({
 							Shop Now
 						</Button>
 					</a>
+					<Button
+						className='ml-24'
+						tag='a'
+						color='primary'
+						wideMobile
+						id='mintButton'
+						onClick={onMintPressed}>
+						Mint with MATIC
+					</Button>
 				</ButtonGroup>
 			</div>
 		);

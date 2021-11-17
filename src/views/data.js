@@ -22,7 +22,7 @@ const questions = [
 	{
 		id: 5,
 		title: "How much will it cost to mint?",
-		info: "Each Diadragon cost $30 USD.",
+		info: "Each Diadragon will cost $30 USD.",
 	},
 	{
 		id: 6,

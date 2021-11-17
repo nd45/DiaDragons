@@ -176,19 +176,21 @@ const Header = ({
 									{!hideSignin && (
 										<ul className='list-reset header-nav-right'>
 											<li>
-												{/* <button
-													className='button button-primary button-wide-mobile button-sm'
-													id='walletButton'
-													onClick={connectWalletPressed}>
-													{walletAddress.length > 0 ? (
-														"Connected: " +
-														String(walletAddress).substring(0, 6) +
-														"..." +
-														String(walletAddress).substring(38)
-													) : (
-														<span>Connect Wallet</span>
-													)}
-												</button> */}
+												{
+													<button
+														className='button button-primary button-wide-mobile button-sm'
+														id='walletButton'
+														onClick={connectWalletPressed}>
+														{walletAddress.length > 0 ? (
+															"Connected: " +
+															String(walletAddress).substring(0, 6) +
+															"..." +
+															String(walletAddress).substring(38)
+														) : (
+															<span>Connect Wallet</span>
+														)}
+													</button>
+												}
 											</li>
 										</ul>
 									)}
